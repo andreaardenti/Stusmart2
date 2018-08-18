@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>StuSmart - Student Main page</title>
+
+  <!-- Styles -->
+  <link href="./assets/css/page.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+
+
+
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+  <link rel="icon" href="./assets/img/favicon.png">
+</head>
+
+<body>
+
+
+
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+      <div class="navbar-left mr-4">
+        <button class="navbar-toggler" type="button">&#9776;</button>
+      </div>
+
+      <section class="navbar-mobile">
+        <nav class="nav nav-navbar mr-auto">
+          <a class="nav-link active" href="dashboard_student.html" id="stName"></a>
+
+          <a class="nav-link"  id="upgradeBtn">Upgrade</a>
+          <a class="nav-link" id="uploadContent"></a>
+          <a class="nav-link" href="dashboard_student_content.html" id="myStats">My Stats</a>
+        </nav>
+
+        <div>
+          <button type="button" class="btn btn-danger" onclick="logOut()">Log Out</button>
+
+        </div>
+      </section>
+
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+
+  <header class="header" style="background-color: #f7f7f7">
+    <div class="container" id="">
+      <h4 id="courses"></h4>
+    </div>
+  </header>
+  <!-- /.header -->
+
+  <style>
+    .square {
+      border: 1px solid #c1dabe;
+      border-radius: 2px;
+      background: #f4fcf3;
+      text-align: center;
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .square:hover {
+      background: #fdfdfd;
+      cursor: pointer;
+    }
+
+    .square h5 {
+      color: #6f6f6f;
+    }
+
+
+
+    .squarebad {
+      border: 1px solid #dabebe;
+      border-radius: 2px;
+      background: #fcf3f3;
+      text-align: center;
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .squarebad:hover {
+      background: #fdfdfd;
+      cursor: pointer;
+    }
+
+    .squarebad h5 {
+      color: #6f6f6f;
+    }
+  </style>
+
+
+  <section class="section overflow-hidden">
+    <div class="container">
+
+
+      <div data-provide="shuffle">
+
+        <nav class="nav nav-center nav-pills mb-7" data-shuffle="filter" id="subjecttabs">
+        </nav>
+
+
+        <div class="row gap-y gap-2" data-shuffle="list" id="AllSubject">
+
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+
+  <footer class="footer text-white bg-dark py-7">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-md-6">
+          <div class="nav nav-bold nav-uppercase justify-content-center justify-content-md-end">
+            <a class="nav-link" href="index.html"><strong>Company</strong></a>
+            <a class="nav-link" href="privacy_policy.html">Privacy Policy</a>
+            <a class="nav-link" href="terms_of_use_stusmart.html">Terms</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center text-md-left mt-5 mt-md-0">
+          <div class="social social-bg-dark">
+            <a class="social-facebook" href="https://www.facebook.com/The-Boring-Solution-263165081115017/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a>
+            <a class="social-twitter" href="#"><i class="fa fa-twitter"></i></a>
+            <a class="social-youtube" href="#"><i class="fa fa-youtube"></i></a>
+            <a class="social-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+            <a class="social-reddit" href="#"><i class="fa fa-reddit"></i></a>
+          </div>
+        </div>
+
+        <div class="col-12 text-center">
+          <br>
+          <small>© The Unchained Block 2018, All rights reserved.</small>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!-- /.footer -->
+
+  <!-- Scripts -->
+
+  <script src="dashboard_student.js"></script>
+  <script src="./assets/js/page.min.js"></script>
+
+  <script>
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>StuSmart - Market place</title>
+
+  <!-- Styles -->
+  <link href="./assets/css/page.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <!-- Favicons -->
+  <!--<link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+    <link rel="icon" href="./assets/img/favicon.png">-->
+</head>
+
+<body>
+
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" data-navbar="fixed">
+    <div class="container">
+      <div class="navbar-left">
+        <button class="navbar-toggler" type="button">&#9776;</button>
+        <a class="navbar-brand" href="index.html">
+            <img class="logo-dark" src="./assets/img/stusmart_icon.png" alt="logo">
+          </a>
+      </div>
+      <section class="navbar-mobile">
+        <nav class="nav nav-navbar ml-auto">
+          <a class="nav-link" href="http://www.theboringsolutions.com">
+            <p id="langau">About Us
+            </p>
+            <p id="langita">
+              Su di noi
+            </p>
+            <p id="langcn">关于我们
+            </p>
+          </a>
+          <a class="nav-link" href="register.html">
+            <p id="langau">Register
+            </p>
+            <p id="langita">
+              Registrati
+            </p>
+            <p id="langcn">
+              寄存器
+            </p>
+          </a>
+          <a class="nav-link" href="login_student.html">
+            <p id="langau">Log in
+            </p>
+            <p id="langita">
+              Accedi
+            </p>
+            <p id="langcn">
+              登录
+            </p>
+          </a>
+          <a class="nav-link" href="become_uploader.html">
+            <p id="langau">Upload Notes
+            </p>
+            <p id="langita">
+              Carica Appunti
+            </p>
+            <p id="langcn">
+              上传笔记
+            </p>
+          </a>
+          <a class="nav-link" href="contact.html">
+            <p id="langau">Contact
+            </p>
+            <p id="langita">
+              Contatti
+            </p>
+            <p id="langcn">
+              联系
+            </p>
+          </a>
+          <a class="nav-link" href="faq.html">
+            <p id="langau">FAQ
+            </p>
+            <p id="langita">
+              FAQ
+            </p>
+            <p id="langcn">
+              常见问题
+            </p>
+          </a>
+          <li id="ausdd" class="nav-item">
+            <a class="nav-link"><img src="assets/img/flag/au.png" alt="logo"> <span class="arrow"></span></a>
+            <nav class="nav">
+              <a class="nav-link" href="javascript:changeIta();"><img src="assets/img/flag/it.png" alt="logo"></a>
+              <a class="nav-link" href="javascript:changeCn();"><img src="assets/img/flag/cn.png" alt="logo"></a>
+            </nav>
+          </li>
+          <li id="itadd" class="nav-item">
+            <a class="nav-link"><img src="assets/img/flag/it.png" alt="logo"> <span class="arrow"></span></a>
+            <nav class="nav">
+              <a class="nav-link" href="javascript:changeAu();"><img src="assets/img/flag/au.png" alt="logo"></a>
+              <a class="nav-link" href="javascript:changeCn();"><img src="assets/img/flag/cn.png" alt="logo"></a>
+            </nav>
+          </li>
+          <li id="cndd" class="nav-item">
+            <a class="nav-link"><img src="assets/img/flag/cn.png" alt="logo"> <span class="arrow"></span></a>
+            <nav class="nav">
+              <a class="nav-link" href="javascript:changeIta();"><img src="assets/img/flag/it.png" alt="logo"></a>
+              <a class="nav-link" href="javascript:changeAu();"><img src="assets/img/flag/au.png" alt="logo"></a>
+            </nav>
+          </li>
+        </nav>
+      </section>
+
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+
+  <!-- Header -->
+  <header class="header h-fullscreen" style="background-image: url(./assets/img/bg/4.jpg)">
+    <div class="overlay opacity-95" style="background-image: linear-gradient(135deg, #fff 0%, #fff 40%, transparent 100%);"></div>
+    <div class="container">
+      <div class="row align-items-center h-100">
+
+        <div class="col-md-8 col-lg-6">
+          <h1 id="langau" class="display-4">
+		    <strong>
+				Students solutions
+			</strong>
+		  </h1>
+          <h1 id="langita" class="display-4">
+		    <strong>
+				La soluzione per gli studenti
+			</strong>
+		  </h1>
+          <h1 id="langcn" class="display-4">
+		    <strong>
+				Students solutions
+			</strong>
+		  </h1>
+
+          <p class="lead-2 mt-5 mb-8">
+            <p id="langau">Smart way to get the perfect notes and get in touch with your class mate.</p>
+            <p id="langita">La perfetta soluzione per avere appunti a basso costo. </p>
+            <p id="langcn">Smart way to get the perfect notes and get in touch with your class mate.</p>
+
+          </p>
+          <p class="gap-xy">
+            <a id="langau" class="btn btn-xl btn-round btn-primary mw-200" href="register.html">Sign up</a>
+            <a id="langita" class="btn btn-xl btn-round btn-primary mw-200" href="register.html">Registrati</a>
+            <a id="langcn" class="btn btn-xl btn-round btn-primary mw-200" href="register.html">Sign up</a>
+
+            <a id="langau" class="btn btn-xl btn-round btn-outline-primary mw-200" href="login_student.html">Log in</a>
+            <a id="langita" class="btn btn-xl btn-round btn-outline-primary mw-200" href="login_student.html">Accedi</a>
+            <a id="langcn" class="btn btn-xl btn-round btn-outline-primary mw-200" href="login_student.html">Log in</a>
+
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </header>
+  <!-- /.header -->
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Numbers
+	 <section class="section bg-gray" >
+        <div class="container">
+          <div class="row gap-y">
+
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-6">
+                  <h4 class="lead-7 text-right" data-provide="countup" data-from="0" data-to="4000"></h4>
+                </div>
+
+                <div class="col-6">
+                  <p class="small text-uppercase ls-2 mb-2">Users</p>
+                  <p><i class="icon-briefcase lead-4 mb-0"></i></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-6">
+                  <h4 class="lead-7 text-right" data-provide="countup" data-from="0" data-to="100"></h4>
+                </div>
+
+                <div class="col-6">
+                  <p class="small text-uppercase ls-2 mb-2">University</p>
+                  <p><i class="icon-profile-male lead-4 mb-0"></i></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-6">
+                  <h4 class="lead-7 text-right" data-provide="countup" data-from="0" data-to="4000"></h4>
+                </div>
+
+                <div class="col-6">
+                  <p class="small text-uppercase ls-2 mb-2">Documents</p>
+                  <p><i class="icon-happy lead-4 mb-0"></i></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section> -->
+
+    <!--
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      | Products
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      !-->
+    <section class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="langau">Studying was never so easy</h2>
+          <h2 id="langita">Studiare non è mai stato così semplice</h2>
+          <h2 id="langcn">Studying was never so easy</h2>
+          <hr>
+          <p class="lead" id="langau">Find your course, pick a subject, subscribe...and gets notes that suit your studying courses.</p>
+          <p class="lead" id="langita">Scegli il tuo corso, la materia, abbonati...e troverai appunti perfetti per il tuo corso di studi.</p>
+          <p class="lead" id="langcn">Find your course, pick a subject, subscribe...and gets notes that suit your studying courses.</p>
+        </header>
+
+
+        <div class="row gap-y">
+
+          <div class="col-6 col-md-4 col-xl-2">
+            <a class="card card-body border hover-shadow-6 text-center py-6" href="#">
+              <p style="color: #78a300"><i class="icon-lightbulb lead-7"></i></p>
+              <h6 class="mb-0"><strong>E-book</strong></h6>
+            </a>
+          </div>
+
+
+          <div class="col-6 col-md-4 col-xl-2">
+            <a class="card card-body border hover-shadow-6 text-center py-6" href="#">
+              <p style="color: #eb4a62"><i class="icon-book-open lead-7"></i></p>
+              <h6 id="langau" class="mb-0"><strong>Notes</strong></h6>
+              <h6 id="langita" class="mb-0"><strong>Appunti</strong></h6>
+              <h6 id="langcn" class="mb-0"><strong>Notes</strong></h6>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-4 col-xl-2">
+            <a class="card card-body border hover-shadow-6 text-center py-6" href="#">
+              <p style="color: #37b8af"><i class="icon-envelope lead-7"></i></p>
+              <h6 class="mb-0"><strong>Flash Card</strong></h6>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-4 col-xl-2">
+            <a class="card card-body border hover-shadow-6 text-center py-6" href="#">
+              <p style="color: #f69a3e"><i class="icon-chat lead-7"></i></p>
+              <h6 id="langau"="mb-0"><strong>Get paid</strong></h6>
+              <h6 id="langita" class="mb-0"><strong>Guadagna</strong></h6>
+              <h6 id="langcn" class="mb-0"><strong>Get Paid</strong></h6>
+            </a>
+          </div>
+
+
+          <div class="col-6 col-md-4 col-xl-2">
+            <a class="card card-body border hover-shadow-6 text-center py-6" href="#">
+              <p style="color: #f0c93e"><i class="icon-mic lead-7"></i></p>
+              <h6 id="langau" class="mb-0"><strong>Easy to use</strong></h6>
+              <h6 id="langita" class="mb-0"><strong>Facile da usare</strong></h6>
+              <h6 id="langcn" class="mb-0"><strong>Easy to use</strong></h6>
+            </a>
+          </div>
+
+
+          <div class="col-6 col-md-4 col-xl-2">
+            <a class="card card-body border hover-shadow-6 text-center py-6" href="#app">
+              <p style="color: #2faabc"><i class="icon-piechart lead-7"></i></p>
+              <h6 class="mb-0"><strong>Mobile App</strong></h6>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-gray">
+      <div class="container">
+        <div id="newSubjectGrid" class="row gap-y">
+        </div>
+      </div>
+    </section>
+
+
+    <section id="app" class="section overflow-hidden">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 text-center">
+            <img src="./assets/img/mokeup/mokeup_img.png" alt="..." data-aos="slide-up">
+          </div>
+
+          <div class="col-md-6 align-self-center">
+            <h2>Now Available</h2>
+            <p>Download our state of the art mobile app for android.</p>
+
+            <div class="gap-xy-2 my-6">
+              <a><img src="./assets/img/app/badge-apple.png" alt="download on app store"></a>
+              <a href="https://play.google.com/store/apps/details?id=com.stusmart"><img src="./assets/img/app/badge-google.png" alt="download on google play"></a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="section bg-gray">
+      <div class="container">
+        <div class="row gap-y align-items-center">
+          <div class="col-md-6">
+            <p class="lead mb-0 text-center text-md-left" id="langau">Subscribe to our newsletter and receive the latest news.</p>
+            <p class="lead mb-0 text-center text-md-left" id="langita">Iscriviti alla nostra news letter e ricevi le ultime news</p>
+            <p class="lead mb-0 text-center text-md-left" id="langcn">Join a community that you always dreamed about</p>
+          </div>
+
+          <div class="col-md-4 ml-auto">
+            <form class="input-round justify-content-center justify-content-lg-end" action="" method="post" target="_blank">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input type="text" name="EMAIL" class="form-control" placeholder="Email Address">
+                <span class="input-group-append">
+                    <button id="langau" class="btn btn-info">Subscribe</button>
+          					<button id="langita" class="btn btn-info">Sottoscrivi</button>
+          					<button id="langcn" class="btn btn-info">Subscribe</button>
+                  </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+
+  <footer class="footer text-white bg-dark py-7">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-md-6">
+          <div class="nav nav-bold nav-uppercase justify-content-center justify-content-md-end">
+            <a class="nav-link" href="http://www.theboringsolutions.com"><strong>Company</strong></a>
+            <a class="nav-link" href="../privacy_policy.html">Privacy Policy</a>
+            <a class="nav-link" href="terms_of_use_stusmart.html">Terms of Use</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center text-md-left mt-5 mt-md-0">
+          <div class="social social-bg-dark">
+            <a class="social-facebook" href="https://www.facebook.com/The-Boring-Solution-263165081115017/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a>
+            <a class="social-twitter" href="#"><i class="fa fa-twitter"></i></a>
+            <a class="social-youtube" href="#"><i class="fa fa-youtube"></i></a>
+            <a class="social-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+            <a class="social-reddit" href="#"><i class="fa fa-reddit"></i></a>
+          </div>
+        </div>
+
+        <div class="col-12 text-center">
+          <br>
+          <small>© The Unchained Block 2018, All rights reserved.</small>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!-- /.footer -->
+
+
+
+  <!-- Scripts -->
+
+  <script src="./js/plang.js"></script>
+  <script src="index.js"></script>
+  <script src="./assets/js/page.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

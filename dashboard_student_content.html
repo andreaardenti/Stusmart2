@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Stylized tables to allow audience grabs the information in a glance.">
+  <meta name="keywords" content="table, bootstrap">
+  <title>Stusmart | Upload Note</title>
+  <link href="./assets/css/page.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src='nprogress.js'></script>
+  <link rel='stylesheet' href='nprogress.css' />
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+  <link rel="icon" href="./assets/img/favicon.png">
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+      <div class="navbar-left mr-4">
+        <button class="navbar-toggler" type="button">&#9776;</button>
+      </div>
+
+      <section class="navbar-mobile">
+        <nav class="nav nav-navbar mr-auto">
+          <a class="nav-link active" href="dashboard_student.html" id="stName"></a>
+          <a class="nav-link"  id="upgradeBtn">Upgrade</a>
+          <a class="nav-link active" href="dashboard_student_content.html" id="uploadContent">Upload Content</a>
+          <a class="nav-link" href="dashboard_student_content.html" id="myStats">My Stats</a>
+        </nav>
+
+        <div>
+          <button type="button" class="btn btn-danger" onclick="logOut()">Log Out</button>
+
+        </div>
+      </section>
+
+    </div>
+  </nav>
+
+
+  <!-- Header -->
+  <header class="header" style="background-color: #f7f7f7">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Upload your Note</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- /.header -->
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+
+
+
+
+
+
+    <section class="section">
+      <div class="container">
+
+
+        <!-- Modal - Default -->
+        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Note</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+              </div>
+
+              <div class="modal-body">
+                <p class="lead"></p>
+                <p class="lead mb-0">Our template make it an easy task as well.</p>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <a class="btn btn-primary" href="#uploadForm">Add Note</a>
+          <table id="tblEbook" class="table table-hover">
+            <thead>
+              <tr>
+                <th> # </th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Subject Name</th>
+                <th>Link</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="ebookTable">
+            </tbody>
+          </table>
+
+
+
+          <div class="col-md-6" id="uploadForm">
+            <br></br>
+            <h5>Upload a Note : </h5><br>
+
+            <div class="form-group">
+              <label>Select Subject</label>
+              <select class="form-control form-control-sm" id="subjectDropdown">
+            </select>
+            </div>
+
+            <div class="form-group">
+              <label>File Name</label>
+              <input class="form-control form-control-sm" type="text" placeholder="First name" id="fileName">
+            </div>
+
+            <div class="form-group">
+              <label>File Description</label>
+              <input class="form-control" type="text" placeholder="File Description" id="fileDesc">
+            </div>
+
+
+            <div class="form-group">
+              <label>Date</label>
+              <input class="form-control" type="date" placeholder="File Description" id="fileDate">
+            </div>
+
+            <div class="form-group">
+              <label>File Type</label>
+              <select class="form-control form-control-sm" id="typeDropdown">
+                <option></option>
+                <option>Chapter Note</option>
+                <option>Whole Course</option>
+                <option>Daily Note</option>
+              </select>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-md-3 control-label">Select File</label>
+              <div class="col-md-7">
+                <input type="file" name="file" accept=".pdf" id="file">
+              </div>
+            </div>
+
+
+            <button type="button" class="btn btn-primary" onclick="uploadEbook()">Upload</button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+  </main>
+  <!-- /.main-content -->
+
+
+  <footer class="footer text-white bg-dark py-7">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-md-6">
+          <div class="nav nav-bold nav-uppercase justify-content-center justify-content-md-end">
+            <a class="nav-link" href="index.html"><strong>Company</strong></a>
+            <a class="nav-link" href="../privacy_policy.html">Privacy Policy</a>
+            <a class="nav-link" href="terms_of_use_stusmart.html">Terms</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center text-md-left mt-5 mt-md-0">
+          <div class="social social-bg-dark">
+            <a class="social-facebook" href="https://www.facebook.com/The-Boring-Solution-263165081115017/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a>
+            <a class="social-twitter" href="#"><i class="fa fa-twitter"></i></a>
+            <a class="social-youtube" href="#"><i class="fa fa-youtube"></i></a>
+            <a class="social-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+            <a class="social-reddit" href="#"><i class="fa fa-reddit"></i></a>
+          </div>
+        </div>
+
+        <div class="col-12 text-center">
+          <br>
+          <small>© The Unchained Block 2018, All rights reserved.</small>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!-- /.footer -->
+
+
+  <!-- Scripts -->
+
+  <script src="dashboard_student_content.js"></script>
+  <script src="./assets/js/page.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

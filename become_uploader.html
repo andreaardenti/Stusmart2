@@ -1,0 +1,245 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>StuSmart - Market place</title>
+
+    <!-- Styles -->
+    <link href="./assets/css/page.min.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+    <!-- Favicons -->
+    <!--<link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+    <link rel="icon" href="./assets/img/favicon.png">-->
+  </head>
+
+  <body>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" data-navbar="fixed" >
+      <div class="container">
+
+        <div class="navbar-left">
+          <button class="navbar-toggler" type="button">&#9776;</button>
+          <a class="navbar-brand" href="index.html">
+            <img class="logo-dark" src="./assets/img/stusmart_icon.png" alt="logo">
+          </a>
+        </div>
+
+              <section class="navbar-mobile">
+        <nav class="nav nav-navbar ml-auto">
+          <a class="nav-link" href="http://www.theboringsolutions.com">
+            <p id="langau">About Us
+            </p>
+            <p id="langita">
+              Su di noi
+            </p>
+            <p id="langcn">关于我们
+            </p>
+          </a>
+          <a class="nav-link" href="register.html">
+            <p id="langau">Register
+            </p>
+            <p id="langita">
+              Registrati
+            </p>
+            <p id="langcn">
+              寄存器
+            </p>
+          </a>
+          <a class="nav-link" href="login_student.html">
+            <p id="langau">Log in
+            </p>
+            <p id="langita">
+              Accedi
+            </p>
+            <p id="langcn">
+              登录
+            </p></a>
+          <a class="nav-link" href="become_uploader.html">
+            <p id="langau">Upload Notes
+            </p>
+            <p id="langita">
+              Carica Appunti
+            </p>
+            <p id="langcn">
+              上传笔记
+            </p>
+          </a>
+          <a class="nav-link" href="contact.html">
+            <p id="langau">Contact
+            </p>
+            <p id="langita">
+              Contatti
+            </p>
+            <p id="langcn">
+              联系
+            </p>
+          </a>
+          <a class="nav-link" href="faq.html">
+            <p id="langau">FAQ
+            </p>
+            <p id="langita">
+              FAQ
+            </p>
+            <p id="langcn">
+              常见问题
+            </p>
+          </a>
+          <li id="ausdd" class="nav-item">
+            <a class="nav-link"><img src="assets/img/flag/au.png" alt="logo"> <span class="arrow"></span></a>
+            <nav class="nav">
+              <a class="nav-link" href="javascript:changeIta();"><img src="assets/img/flag/it.png" alt="logo"></a>
+              <a class="nav-link" href="javascript:changeCn();"><img src="assets/img/flag/cn.png" alt="logo"></a>
+            </nav>
+          </li>
+          <li id="itadd" class="nav-item">
+            <a class="nav-link"><img src="assets/img/flag/it.png" alt="logo"> <span class="arrow"></span></a>
+            <nav class="nav">
+              <a class="nav-link" href="javascript:changeAu();"><img src="assets/img/flag/au.png" alt="logo"></a>
+              <a class="nav-link" href="javascript:changeCn();"><img src="assets/img/flag/cn.png" alt="logo"></a>
+            </nav>
+          </li>
+          <li id="cndd" class="nav-item">
+            <a class="nav-link"><img src="assets/img/flag/cn.png" alt="logo"> <span class="arrow"></span></a>
+            <nav class="nav">
+              <a class="nav-link" href="javascript:changeIta();"><img src="assets/img/flag/it.png" alt="logo"></a>
+              <a class="nav-link" href="javascript:changeAu();"><img src="assets/img/flag/au.png" alt="logo"></a>
+            </nav>
+          </li>
+        </nav>
+      </section>
+
+      </div>
+    </nav><!-- /.navbar --><!-- Header -->
+	
+  <header class="header" style="background-color: #f7f7f7">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 id="langau">Become an uploader</h1>
+		  <h1 id="langita">Diventa un uploader</h1>
+		  <h1 id="langcn">Become an uploader</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- /.header -->
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+
+
+
+
+
+    <section class="section">
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-lg-5 mr-auto text-center">
+            <h3 id="langau" class="heading-alt fw-300">Earn money from your content</h3><br>
+			<h3 id="langita" class="heading-alt fw-300">Guadagna dai tuoi contenuti</h3><br>
+			<h3 id="langcn" class="heading-alt fw-300">Earn money from your content</h3><br>
+			
+            <p id="langau">Upload your notes to Stusmart and make money when your classmates subscribe to the course. Its a good opportunity to earn money while doing absoluetly nothing besides taking money.</p>
+			<p id="langita">Carica i tuoi appunti in Stusmart, ricevi un compenso quando uno dei tuoi compagni di corso si abbona. Un' ottima opportunità per guadagnare facendo niente più di quello che fai di solito. </p>
+			<p id="langcn">Upload your notes to Stusmart and make money when your classmates subscribe to the course. Its a good opportunity to earn money while doing absoluetly nothing besides taking money.</p>
+           
+			<small><strong>Write in English or Italian</strong></small><br><br>
+
+            <form action="./assets/php/sendmail.php" method="POST" data-form="mailer">
+              <div id="langau" class="alert alert-success d-on-success">We received your request and will contact you back soon.</div>
+			  <div id="langita" class="alert alert-success d-on-success">Abbiamo ricevuto la tua richiesta, ti contatteremo al più presto.</div>
+			  <div id="langcn" class="alert alert-success d-on-success">We received your request and will contact you back soon.</div>
+
+              <input type="hidden" name="subject" value="Request demo">
+
+			    <div id="langau" class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
+			    <div id="langita" class="form-group"> <input class="form-control" type="text" name="name" placeholder="Nome"></div>
+		   	    <div id="langcn" class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
+
+			    <div id="langau" class="form-group"><input class="form-control" type="text" name="company_name" placeholder="University name"></div>
+			    <div id="langita" class="form-group"><input class="form-control" type="text" name="company_name" placeholder="Nome Università"></div>
+			    <div id="langcn" class="form-group"><input class="form-control" type="text" name="company_name" placeholder="University name"></div>
+				  
+				<div class="form-group">
+					<input class="form-control" type="email" name="email" placeholder="Email">
+				</div>
+
+              <div id="langau" class="form-group"><textarea class="form-control" placeholder="Please describe why you want to be an uploader. And why should we choose you?" rows="5"></textarea></div>
+			  <div id="langita" class="form-group"><textarea class="form-control" placeholder="Per favore descrivi perchè vuoi uplodare i tuoi appunti." rows="5"></textarea></div>
+			  <div id="langcn" class="form-group"><textarea class="form-control" placeholder="Please describe why you want to be an uploader. And why should we choose you?" rows="5"></textarea></div>
+
+              <button id="langau" class="btn btn-primary btn-block" type="submit">Apply</button>
+			  <button id="langita" class="btn btn-primary btn-block" type="submit">Applica</button>
+			  <button id="langcn" class="btn btn-primary btn-block" type="submit">Apply</button>
+            </form>
+          </div>
+
+
+          <div class="col-lg-5 mx-auto">
+            <img src="https://image.freepik.com/free-vector/teenager-winning-money-in-internet-cartoon-young-boy-happy-receiving-dollars_33099-167.jpg" alt="..." data-aos="fade-up">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </main>
+  <!-- /.main-content -->
+
+
+      <!-- Footer -->
+
+      <footer class="footer text-white bg-dark py-7">
+        <div class="container">
+          <div class="row align-items-center">
+
+            <div class="col-md-6">
+              <div class="nav nav-bold nav-uppercase justify-content-center justify-content-md-end">
+                <a class="nav-link" href="http://www.theboringsolutions.com"><strong>Company</strong></a>
+                <a class="nav-link" href="../privacy_policy.html">Privacy Policy</a>
+                <a class="nav-link" href="terms_of_use_stusmart.html">Terms of Use</a>
+              </div>
+            </div>
+
+            <div class="col-md-6 text-center text-md-left mt-5 mt-md-0">
+              <div class="social social-bg-dark">
+                <a class="social-facebook" href="https://www.facebook.com/The-Boring-Solution-263165081115017/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a>
+                <a class="social-twitter" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="social-youtube" href="#"><i class="fa fa-youtube"></i></a>
+				<a class="social-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                <a class="social-reddit" href="#"><i class="fa fa-reddit"></i></a>
+              </div>
+            </div>
+
+            <div class="col-12 text-center">
+              <br>
+              <small>© The Unchained Block 2018, All rights reserved.</small>
+            </div>
+
+          </div>
+        </div>
+      </footer><!-- /.footer -->
+    <!-- Scripts -->
+	<script src="./js/plang.js"></script>
+    <script src="./assets/js/page.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+  </body>
+</html>

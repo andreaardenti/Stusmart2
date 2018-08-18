@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>Stusmart — Login</title>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+  <!-- Styles -->
+  <link href="./assets/css/page.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+  <link href="./assets/css/mycss.css" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+  <link rel="icon" href="./assets/img/favicon.png">
+</head>
+
+<body class="layout-centered bg-img" style="background-image: url(./assets/img/bg/4.jpg);">
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <div class="bg-white rounded shadow-7 w-400 mw-100 p-6">
+      <h5 class="mb-7">Sign into your account</h5>
+
+      <form id="form_registration" action="javascript:login(this);" method="get">
+        <div class="form-group">
+          <label><h5>Email</h5></label>
+          <input type="text" class="form-control" name="email" pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" id="emailField" required>
+        </div>
+
+        <div class="form-group">
+          <label><h5>Password</h5></label>
+          <input type="password" class="form-control" name="password" placeholder="Password" required minlength="6" maxlength="12" id="passwordField">
+          <span class="validity"></span><b size="3"> Between 6 and 12.</b>
+        </div>
+
+        <div class="form-group flexbox py-3">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" checked>
+            <label class="custom-control-label">Remember me</label>
+          </div>
+          <a class="text-muted small-2" href="user-recover.html">Forgot password?</a>
+        </div>
+
+
+        <div class="form-group">
+          <button class="btn btn-block btn-primary" type="submit">Login</button>
+        </div>
+      </form>
+
+      <!--<div class="divider">Or Login With</div>
+        <div class="text-center">
+          <a class="btn btn-circle btn-sm btn-facebook mr-2" href="#"><i class="fa fa-facebook"></i></a>
+          <a class="btn btn-circle btn-sm btn-google mr-2" href="#"><i class="fa fa-google"></i></a>
+          <a class="btn btn-circle btn-sm btn-twitter" href="#"><i class="fa fa-twitter"></i></a>
+        </div>-->
+
+      <hr class="w-30">
+
+      <p class="text-center text-muted small-2">Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+
+
+  </main>
+  <!-- /.main-content -->
+
+
+
+  <script>
+    init();
+
+
+    var mainUrl = 'http://51.15.236.80:4000';
+    var baseUrl = 'http://www.thestusmart.com/';
+
+    function init() {
+      toasterOptions();
+
+    }
+
+    if (Cookies.get('id')) {
+      getUserInfo(Cookies.get('id'), Cookies.get('token'));
+    }
+
+    function toasterOptions() {
+      toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+    };
+
+    function login(form) {
+      var myemail = form.emailField.value;
+      var mypassword = form.passwordField.value;
+      var params = JSON.stringify({
+        email: myemail,
+        password: mypassword
+      })
+      var request = new XMLHttpRequest();
+      request.open('POST', mainUrl + '/api/authenticate', true);
+      request.setRequestHeader("Content-Type", "application/json");
+      request.onload = function() {
+        var data = JSON.parse(this.response);
+        console.log(data);
+        if (data.success) {
+          toastr.success("Welcome!");
+          getUserInfo(data.id, data.token);
+        } else {
+          toastr.error(data.message);
+        }
+      }
+      request.send(params);
+    }
+
+    function getUserInfo(myId, myToken) {
+      var request = new XMLHttpRequest();
+      request.open('GET', mainUrl + '/api/users/' + myId, true);
+      request.onload = function() {
+        var data = JSON.parse(this.response);
+        console.log(data);
+        if (data.success) {
+
+          Cookies.set('id', myId, {
+            expires: 7
+          });
+          Cookies.set('token', myToken, {
+            expires: 7
+          });
+          if (data.message.isComplete) {
+            window.location.href = 'dashboard_student.html'
+          } else {
+            window.location.href = 'complete_reg_student.html'
+            toastr.success("Please complete your registration");
+          }
+
+        } else {
+          toastr.error(data.message);
+        }
+      }
+      request.send();
+    }
+  </script>
+
+  <!-- Scripts -->
+  <script src="./assets/js/page.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

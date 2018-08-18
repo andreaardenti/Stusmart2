@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>TheSaaS — Login</title>
+
+  <!-- Styles -->
+  <link href="./assets/css/page.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+
+  <!-- Favicons -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+  <link rel="icon" href="./assets/img/favicon.png">
+</head>
+
+<body class="layout-centered bg-img" style="background-image: url(./assets/img/bg/4.jpg);">
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="bg-white rounded shadow-7 w-400 mw-100 p-6">
+      <h5 class="mb-6">Verify User</h5>
+      <h8 class="mb-6">Please check your email for your verification code</h8>
+      <form class="input-line1" action="javascript:verify(this);" method="get">
+        <div class="form-group">
+          <input class="form-control" id="verificationcode" placeholder="Verification Code">
+
+          <a class="ml-1" href="user-recover.html">Resend Code</a>
+        </div>
+
+        <button class="btn btn-lg btn-block btn-primary" type="submit">Verify</button>
+      </form>
+
+    </div>
+
+  </main>
+  <!-- /.main-content -->
+
+
+  <!-- Scripts -->
+  <script src="verifyuser.js"></script>
+  <script src="./assets/js/page.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

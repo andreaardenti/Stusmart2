@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>StuSmart - FAQ</title>
+
+    <!-- Styles -->
+    <link href="./assets/css/page.min.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+    <link rel="icon" href="./assets/img/favicon.png">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  </head>
+
+  <body>
+
+
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" data-navbar="fixed" >
+      <div class="container">
+
+        <div class="navbar-left">
+          <button class="navbar-toggler" type="button">&#9776;</button>
+          <a class="navbar-brand" href="index.html">
+            <img class="logo-dark" src="./assets/img/stusmart_icon.png" alt="logo">
+          </a>
+        </div>
+
+      <section class="navbar-mobile">
+        <nav class="nav nav-navbar ml-auto">
+          <a class="nav-link" href="http://www.theboringsolutions.com">
+            <p id="langau">About Us
+            </p>
+            <p id="langita">
+              Su di noi
+            </p>
+            <p id="langcn">关于我们
+            </p>
+          </a>
+          <a class="nav-link" href="register.html">
+            <p id="langau">Register
+            </p>
+            <p id="langita">
+              Registrati
+            </p>
+            <p id="langcn">
+              寄存器
+            </p>
+          </a>
+          <a class="nav-link" href="login_student.html">
+            <p id="langau">Log in
+            </p>
+            <p id="langita">
+              Accedi
+            </p>
+            <p id="langcn">
+              登录
+            </p></a>
+          <a class="nav-link" href="become_uploader.html">
+            <p id="langau">Upload Notes
+            </p>
+            <p id="langita">
+              Carica Appunti
+            </p>
+            <p id="langcn">
+              上传笔记
+            </p>
+          </a>
+          <a class="nav-link" href="contact.html">
+            <p id="langau">Contact
+            </p>
+            <p id="langita">
+              Contatti
+            </p>
+            <p id="langcn">
+              联系
+            </p>
+          </a>
+          <a class="nav-link" href="faq.html">
+            <p id="langau">FAQ
+            </p>
+            <p id="langita">
+              FAQ
+            </p>
+            <p id="langcn">
+              常见问题
+            </p>
+          </a>
+          <li id="ausdd" class="nav-item">
+            <a class="nav-link"><img src="assets/img/flag/au.png" alt="logo"> <span class="arrow"></span></a>
+            <nav class="nav">
+              <a class="nav-link" href="javascript:changeIta();"><img src="assets/img/flag/it.png" alt="logo"></a>
+              <a class="nav-link" href="javascript:changeCn();"><img src="assets/img/flag/cn.png" alt="logo"></a>
+            </nav>
+          </li>
+          <li id="itadd" class="nav-item">
+            <a class="nav-link"><img src="assets/img/flag/it.png" alt="logo"> <span class="arrow"></span></a>
+            <nav class="nav">
+              <a class="nav-link" href="javascript:changeAu();"><img src="assets/img/flag/au.png" alt="logo"></a>
+              <a class="nav-link" href="javascript:changeCn();"><img src="assets/img/flag/cn.png" alt="logo"></a>
+            </nav>
+          </li>
+          <li id="cndd" class="nav-item">
+            <a class="nav-link"><img src="assets/img/flag/cn.png" alt="logo"> <span class="arrow"></span></a>
+            <nav class="nav">
+              <a class="nav-link" href="javascript:changeIta();"><img src="assets/img/flag/it.png" alt="logo"></a>
+              <a class="nav-link" href="javascript:changeAu();"><img src="assets/img/flag/au.png" alt="logo"></a>
+            </nav>
+          </li>
+        </nav>
+      </section>
+
+      </div>
+    </nav><!-- /.navbar -->
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+     <!--
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      | Faq
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      !-->
+
+      <section class="section">
+        <div class="container">
+          <header class="section-header">
+            <small>FAQ</small>
+            <h2 id="langau">Frequently Asked Questions</h2>
+			<h2 id="langita">Domande frequenti</h2>
+			<h2 id="langcn">Frequently Asked Questions</h2>
+            <hr>
+            <p id="langau">Got a question? We've got answers. If you have some other questions, see our support center.</p>
+			<p id="langita">Hai una domanda ? Abbiamo una risposta! Se non riesci a trovarla, contattaci !</p>
+			<p id="langcn">Got a question? We've got answers. If you have some other questions, see our support center.</p>
+          </header>
+
+
+          <div class="row">
+            <div class="col-md-8 mx-auto">
+
+              <div class="accordion accordion-connected accordion-arrow-right" id="accordion-1">
+				
+				<h1 id="langau"> Subscription </h1>
+				<h1 id="langita"> Abbonamento </h1>
+				<h1 id="langcn"> Subscription </h1>
+
+                <div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-1-1">I want to cancel my subscription.</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-1-1">Voglio cancellare il mio abbonamento.</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-1-1">I want to cancel my subscription.</a>
+                  </h5>
+
+                  <div id="collapse-1-1" class="collapse" data-parent="#accordion-1">
+                    <div id="langau" class="card-body">
+                      You can cancel your subscription in StuSmart in anytime using our web platform that you can find at https://www.thestusmart.com.<br>
+					  Please note that by deleting your account you will not cancel your subscription.<br><br>			  
+					  To cancel your subscription log in and on the profile you will find the button “Delete Subscription”. <br>
+					  It will take 7 business days before it will be deleted.
+                    </div>
+					
+					<div id="langita" class="card-body">
+                      Puoi cancellare il tuo abbonamento in qualsiasi momento usando la nostra piattaforma web, che puoi trovare a https://www.thestusmart.com.<br>
+					  Nota bene: Se cancelli il tuo account il tuo abbonamento non verrà cancellato.<br><br>
+					  Per cancellare il tuo abbonamento, log in e nel tuo profilo troverai cancella abbonamento.<br>
+					  Ci vorranno 7 giorni prima che venga cancellato.<br>
+                    </div>
+					
+					<div id="langcn" class="card-body">
+                      You can cancel your subscription in StuSmart in anytime using our web platform that you can find at https://www.thestusmart.com<br>
+					  Please note that by deleting your account you will not cancel your subscription.<br><br>			  
+					  To cancel your subscription log in and on the profile you will find the button “Delete Subscription”. <br>
+					  It will take 7 business days before it will be deleted.
+                    </div>
+					
+					
+                  </div>
+                </div>
+
+
+                <div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-1-2">Having trouble canceling your subscription.</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-1-2">Ho problemi a cancellare il mio abbonamento.</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-1-2">Having trouble canceling your subscription.</a>
+                  </h5>
+
+                  <div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
+                    <div id="langau" class="card-body">
+						 If you are having any issue cancelling your subscription, please contact us at theboringsolution@gmail.com. <br>
+						 Make sure to write with the email that you subscribe with.
+                    </div>
+					<div id="langita" class="card-body">
+						 Se hai problemi a cancellare il tuo abbonamento, per favore contattaci a theboringsolution@gmail.com<br>
+						 Scrivici con la mail con cui hai l’abbonamento.
+                    </div>
+					<div id="langcn" class="card-body">
+						 If you are having any issue cancelling your subscription, please contact us at theboringsolution@gmail.com. <br>
+						 Make sure to write with the email that you subscribe with.
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-1-3">Monthly subscription billing.</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-1-3">Abbonamento mensile.</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-1-3">Monthly subscription billing.</a>
+                  </h5>
+
+                  <div id="collapse-1-3" class="collapse" data-parent="#accordion-1">
+                    <div id="langau" class="card-body">
+						Monthly subscriptions will be billed at the beginning of the month. 
+                    </div>
+					<div id="langita" class="card-body">
+						L’ abbonamento mensile verrà pagato all’inizio del mese.
+                    </div>
+					<div id="langcn" class="card-body">
+						Monthly subscriptions will be billed at the beginning of the month. 
+                    </div>
+                  </div>
+                </div>
+				
+			    <div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-1-4">6 Months subscription billing</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-1-4">Abbonamento 6 mesi</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-1-4">6 Months subscription billing</a>
+                  </h5>
+
+                  <div id="collapse-1-4" class="collapse" data-parent="#accordion-1">
+                    <div id="langau" class="card-body">
+						Semester subscription at the beginning of 6 months.
+                    </div>
+					<div id="langita" class="card-body">
+						L’abbonamento semestrale verrà pagato all’inizio dei 6 mesi
+                    </div>
+					<div id="langcn" class="card-body">
+						Semester subscription at the beginning of 6 months.
+                    </div>
+                  </div>
+                </div>
+				
+			  </div>
+		  </div>
+		  
+<!-------------------------------------------------------------------------------------------------------------------------------------------------->
+		  
+		  <div class="col-md-8 mx-auto">
+            <div class="accordion accordion-connected accordion-arrow-right" id="accordion-2">
+		  
+				<h1 id="langau"> NotesMaker payment </h1>
+				<h1 id="langita"> Pagamento NotesMaker </h1>
+				<h1 id="langcn"> NotesMaker payment </h1>
+				
+			    <div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-2-1">How much i will get paid ?</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-2-1">How much i will get paid ?</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-2-1">How much i will get paid ?</a>
+                  </h5>
+				  
+                  <div id="collapse-2-1" class="collapse" data-parent="#accordion-2">
+                    <div id="langau" class="card-body">
+						The payment doesn’t have a fixed amount.<br>
+						A NotesMaker will take 50% of any users that subscribe under his course or in a subject that he/she is uploading. <br>						
+						Please note that if one or more NotesMaker are registered under the same course the revenue will be shared between the two NotesMaker.
+                    </div>
+					
+                    <div id="langita" class="card-body">
+						Il pagamento che riceverai non è fisso.<br>
+						Un NotesMaker riceverà il 50% del pagamento di ogni utente che si abbona sotto il suo corso.<br>
+						Se più di un NotesMaker sono registrati sotto lo stesso corso i guadagni verranno divisi.
+                    </div>
+					
+                    <div id="langcn" class="card-body">
+						The payment doesn’t have a fixed amount.<br>
+						A NotesMaker will take 50% of any users that subscribe under his course or in a subject that he/she is uploading. <br>						
+						Please note that if one or more NotesMaker are registered under the same course the revenue will be shared between the two NotesMaker.
+                    </div>
+					
+                  </div>
+                </div>
+				
+				<div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-2-2">Where will I receive my money ?</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-2-2">Dove riceverò i soldi ?</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-2-2">Where will I receive my money ?</a>
+                  </h5>
+                  <div id="collapse-2-2" class="collapse" data-parent="#accordion-2">
+                    <div id="langau" class="card-body">
+						In order to process the payment we need your bank account information or your paypall account details. <br>
+						You need to be sure that you have added the right bank account details ( IBAN, SWIFT and so forth ) or the correct paypall email address. <br>
+						Please note that you agree to pay all the bank fees, related to the currency change or bank transfer fees. <br>
+                    </div>
+					
+                    <div id="langita" class="card-body">
+						Per processare il pagamento avremo bisogno delle tue informazioni bancarie o il tuo account paypall. <br>
+						Devi essere certo che i tuoi dati siano corretti, o il pagamento non andrà a buon fine. <br>
+						Nota bene: Tutte le tasse per il trasferimento e lo scambio di valuta sono a tuo carico.
+                    </div>
+					
+                    <div id="langcn" class="card-body">
+						In order to process the payment we need your bank account information or your paypall account details. <br>
+						You need to be sure that you have added the right bank account details ( IBAN, SWIFT and so forth ) or the correct paypall email address. <br>
+						Please note that you agree to pay all the bank fees, related to the currency change or bank transfer fees. <br>
+                    </div>
+                  </div>
+                </div>
+				
+				<div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-2-3">When will I receive the money ?</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-2-3">Quando riceverò i soldi?</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-2-3">When will I receive the money ?</a>
+                  </h5>
+                  <div id="collapse-2-3" class="collapse" data-parent="#accordion-2">
+                    <div id="langau" class="card-body">
+						The monthly payment will be processed before the 15th of the following month.
+                    </div>
+					
+					<div id="langita" class="card-body">
+						Il pagamento mensile verrà processato prima del 15 del mese seguente.
+                    </div>
+					
+					<div id="langcn" class="card-body">
+						The monthly payment will be processed before the 15th of the following month.
+                    </div>
+                  </div>
+                </div>
+				
+				<div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-2-4">I did not receive the payment</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-2-4">Non ho ricevuto il pagamento</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-2-4">I did not receive the payment</a>
+                  </h5>
+                  <div id="collapse-2-4" class="collapse" data-parent="#accordion-2">
+				  
+                    <div id="langau" class="card-body">
+						If you don’t receive any payment, please contact us at theboringsolution@gmail.com.
+                    </div>
+					<div id="langita" class="card-body">
+						Se non hai ricevuto il pagamento, per favore contattaci a theboringsolution@gmail.com.
+                    </div>
+					<div id="langcn" class="card-body">
+						If you don’t receive any payment, please contact us at theboringsolution@gmail.com.
+                    </div>
+					
+                  </div>
+                </div>
+				
+				<div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-2-5">Payment denied</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-2-5">Cancellazione Pagamento</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-2-5">Payment denied</a>
+                  </h5>
+                  <div id="collapse-2-5" class="collapse" data-parent="#accordion-2">
+                    <div id="langau" class="card-body">
+						Your payment might be denied if the score of your Notes is less than 4 starts. <br>
+						If we discover that you have violated a third party copyright. <br>
+						If you don’t upload Notes at least once a week. For more information about it read our <a href="terms_of_use_stusmart.html">Terms of  Use</a>. 
+                    </div>
+					
+					<div id="langita" class="card-body">
+						Il tuo pagamento potrà essere cancellato se il punteggio dei tuoi appunti è minore di 4 stelle, o se hai violato copyright, o se non vengono caricati appunti almeno una volta alla settimana. Per maggiori informazioni leggi <a href="terms_of_use_stusmart.html">Terms of  Use</a>. 
+                    </div>
+					
+					<div id="langcn" class="card-body">
+						Your payment might be denied if the score of your Notes is less than 4 starts. <br>
+						If we discover that you have violated a third party copyright. <br>
+						If you don’t upload Notes at least once a week. For more information about it read our <a href="terms_of_use_stusmart.html">Terms of  Use</a>. 
+                    </div>
+                  </div>
+                </div>
+				
+			  </div>
+            </div>
+			
+<!-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+		    <div class="col-md-8 mx-auto">
+              <div class="accordion accordion-connected accordion-arrow-right" id="accordion-3">		
+				<h1 id="langau"> NotesMaker Tasks </h1>
+				<h1 id="langita">Compiti NotesMaker </h1>
+				<h1 id="langcn"> NotesMaker Tasks </h1>
+				
+			    <div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-3-1">How do i start ?</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-3-1">Da dove comincio ?</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-3-1">How do i start ?</a>
+                  </h5>
+                  <div id="collapse-3-1" class="collapse" data-parent="#accordion-3">
+				  
+                    <div id="langau" class="card-body">
+						Pick up your course, if you can not find you course email us. And give us all the details about courses and subject and we will upload it. <br>
+						Once everything is uploaded you can start to post your notes. <br>
+						Use the dashboard available on the back end. Choose a subject and upload your notes. Is super easy !
+                    </div>
+					
+					<div id="langita" class="card-body">
+						Scegli il tuo corso di studi, se non lo trovi mandaci una mail a theboringsolution@gmail.com o visita la pagina “carica appunti”. <br>
+						Dacci tutti i dettagli del tuo corso e noi li inseriremo nel sistema.<br>
+						Quando tutto è pronto potrai iniziare ad inserire i tuoi appunti, usando la dashboard nel back end. Scegli una materia e carica i tuoi appunti è facilissimo !
+                    </div>
+					
+					<div id="langcn" class="card-body">
+						Pick up your course, if you can not find you course email us. And give us all the details about courses and subject and we will upload it. <br>
+						Once everything is uploaded you can start to post your notes. <br>
+						Use the dashboard available on the back end. Choose a subject and upload your notes. Is super easy !
+                    </div>				
+					
+                  </div>
+                </div>
+				
+				<div class="card">
+                  <h5 class="card-title">
+                    <a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-3-2">How often do I have to upload my notes ?</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-3-2">Quanto spesso devo caricare gli appunti ?</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-3-2">How often do I have to upload my notes ?</a>
+                  </h5>
+                  <div id="collapse-3-2" class="collapse" data-parent="#accordion-3">
+				  
+                    <div id="langcn" class="card-body">
+						Notes has to be upload at least once a week. 
+						You can also decide to upload your notes daily, you have to be sure you are giving an accurate description.
+                    </div>
+					
+					<div id="langita" class="card-body">
+						Gli appunti devono essere caricati almeno una volta alla settimana. 
+						Puoi anche caricarli giornalmente. 
+						Assicurati che abbiano una descrizione accurata.
+                    </div>
+					
+					<div id="langcn" class="card-body">
+						Notes has to be upload at least once a week. 
+						You can also decide to upload your notes daily, you have to be sure you are giving an accurate description.
+                    </div>
+					
+                  </div>
+                </div>
+				
+				<div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-3-3">How long the notes will be visible in the web site ?</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-3-3">Per quanto tempo gli appunti saranno visibili nel sito web ?</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-3-3">How long the notes will be visible in the web site ?</a>
+                  </h5>
+                  <div id="collapse-3-3" class="collapse" data-parent="#accordion-3">
+				  
+                    <div id="langau" class="card-body">
+						The notes will be visible in the web site until the professors or the studying material will not change. <br>
+						If you uploaded the first semester, and now you are starting the second, you will receive money for any subscription under all the subject you had uploaded in the past.
+                    </div>
+					
+					<div id="langita" class="card-body">
+						Gli appunti saranno visibili nel sito web fin quando il professore o il materiale di studio non cambierà.<br>
+						Se carichi il primo semestre di una materia, e stai iniziando il secondo, riceverai un introito per tutti gli abbonamenti anche dei semestri passati
+
+                    </div>
+					
+					<div id="langcn" class="card-body">
+						The notes will be visible in the web site until the professors or the studying material will not change. <br>
+						If you uploaded the first semester, and now you are starting the second, you will receive money for any subscription under all the subject you had uploaded in the past.
+                    </div>
+					
+                  </div>
+                </div>
+				
+				<div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-3-4">Notes quality</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-3-4">Qualità degli appunti</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-3-4">Notes quality</a>
+                  </h5>
+                  <div id="collapse-3-4" class="collapse" data-parent="#accordion-3">
+                    <div id="langau" class="card-body">
+						Users who have subscribed they will decide the quality of the notes by giving a rating.  <br> 
+						The notes that have less the 4 stars in average are not following our standards.  <br>
+						In some case they will be removed.
+                    </div>
+					
+					<div id="langita" class="card-body">
+						Gli utenti che si abbonano decideranno la qualità delle note attraverso un sistema di rating. <br>
+						Gli appunti che hanno meno di 4 stelle di media non seguono i nostri standard. In alcuni casi le rimuoveremo
+                    </div>
+					
+					<div id="langcn" class="card-body">
+						Users who have subscribed they will decide the quality of the notes by giving a rating.  <br> 
+						The notes that have less the 4 stars in average are not following our standards.  <br>
+						In some case they will be removed.
+                    </div>
+					
+                  </div>
+                </div>
+				
+				<div class="card">
+                  <h5 class="card-title">
+                    <a id="langau" class="collapsed" data-toggle="collapse" href="#collapse-3-5">What can I upload ?</a>
+					<a id="langita" class="collapsed" data-toggle="collapse" href="#collapse-3-5">Cosa posso caricare ?</a>
+					<a id="langcn" class="collapsed" data-toggle="collapse" href="#collapse-3-5">What can I upload ?</a>
+                  </h5>
+                  <div id="collapse-3-5" class="collapse" data-parent="#accordion-3">
+				  
+                    <div id="langau" class="card-body">
+						Notemakers must not publish any content that is not a interpretation of his of course lecture or books. <br>
+						Do not upload professors’s Audio, Video or Copyright material that does not belong to you.
+                    </div>
+					
+					<div id="langita" class="card-body">
+						Notemakers non devono pubblicare nessun contenuto che non è un interpretazione del suo corso o libro di studi. <br>
+						Non caricare l’ Audio, Video or qualsiasi cosa ha un copyright e non appartiene a te.
+                    </div>
+					
+					<div id="langcn" class="card-body">
+						Notemakers must not publish any content that is not a interpretation of his of course lecture or books. <br>
+						Do not upload professors’s Audio, Video or Copyright material that does not belong to you.
+                    </div>
+                  </div>
+                </div>
+				
+				
+				
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+	
+	</main>
+
+
+      <!-- Footer -->
+
+      <footer class="footer text-white bg-dark py-7">
+        <div class="container">
+          <div class="row align-items-center">
+
+            <div class="col-md-6">
+              <div class="nav nav-bold nav-uppercase justify-content-center justify-content-md-end">
+                <a class="nav-link" href="http://www.theboringsolutions.com"><strong>Company</strong></a>
+                <a class="nav-link" href="../privacy_policy.html">Privacy Policy</a>
+                <a class="nav-link" href="terms_of_use_stusmart.html">Terms of Use</a>
+              </div>
+            </div>
+
+            <div class="col-md-6 text-center text-md-left mt-5 mt-md-0">
+              <div class="social social-bg-dark">
+                <a class="social-facebook" href="https://www.facebook.com/The-Boring-Solution-263165081115017/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a>
+                <a class="social-twitter" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="social-youtube" href="#"><i class="fa fa-youtube"></i></a>
+				<a class="social-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                <a class="social-reddit" href="#"><i class="fa fa-reddit"></i></a>
+              </div>
+            </div>
+
+            <div class="col-12 text-center">
+              <br>
+              <small>© The Unchained Block 2018, All rights reserved.</small>
+            </div>
+
+          </div>
+        </div>
+      </footer><!-- /.footer -->
+
+
+    <!-- Scripts -->
+	<script src="./js/plang.js"></script>
+	  <script src="index.js"></script>
+    <script src="./assets/js/page.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+  </body>
+</html>

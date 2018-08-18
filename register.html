@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title id="langau">StuSmart — Register</title>
+  <title id="langita">StuSmart — Registrati</title>
+  <title id="langcn">StuSmart — Register</title>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+  <!-- Styles -->
+  <link href="./assets/css/page.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+  <link href="./assets/css/mycss.css" rel="stylesheet">
+
+  <!-- Favicons -->
+</head>
+
+<body class="layout-centered bg-img" style="background-image: url(./assets/img/bg/4.jpg);">
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <div class="bg-white rounded shadow-7 w-400 mw-100 p-6">
+      <h5 id="langau" class="mb-7">Create an account</h5>
+	  <h5 id="langita" class="mb-7">Crea un account</h5>
+	  <h5 id="langcn" class="mb-7">Create an account</h5>
+
+      <form id="form_registration" action="javascript:signup(this);" method="get">
+
+        <div class="form-group">
+          <input type="text" class="form-control" name="firstname" id="firstNameField" placeholder="First Name" required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" name="lastname" id="lastNameField" placeholder="Last Name" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-control" name="email" placeholder="Email Address" pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" required id="emailField">
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control" name="st_password" placeholder="Password" required minlength="6" maxlength="12" id="passwordField">
+          <span class="validity"></span>
+			<b size="3" id="langau"> Between 6 and 12.</b>
+			<b size="3" id="langita"> Tra 6 e 12 caratteri.</b>
+			<b size="3" id="langcn"> Between 6 and 12.</b>
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control" name="password_confirm" placeholder="Password (confirm)" id="confirmPasswordField">
+        </div>
+
+
+        <div class="form-group py-3">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" required>
+            <label id="langau" class="custom-control-label">I agree to the <a class="ml-1" href="terms_of_use_stusmart.html">terms of service</a></label>
+			<label id="langita" class="custom-control-label">Accetto i <a class="ml-1" href="terms_of_use_stusmart.html">Termini del servizio</a></label>
+			<label id="langcn" class="custom-control-label">I agree to the <a class="ml-1" href="terms_of_use_stusmart.html">terms of service</a></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button id="langau" class="btn btn-block btn-primary" type="submit" onchange="Sendform()">Register</button>
+		  <button id="langita" class="btn btn-block btn-primary" type="submit" onchange="Sendform()">Registrati</button>
+		  <button id="langcn" class="btn btn-block btn-primary" type="submit" onchange="Sendform()">Register</button>
+        </div>
+
+
+      </form>
+
+    <!--  <div class="divider">Or Register With</div>
+      <div class="text-center">
+        <a class="btn btn-circle btn-sm btn-facebook mr-2" href="#"><i class="fa fa-facebook"></i></a>
+        <a class="btn btn-circle btn-sm btn-google mr-2" href="#"><i class="fa fa-google"></i></a>
+        <a class="btn btn-circle btn-sm btn-twitter" href="#"><i class="fa fa-twitter"></i></a>
+      </div> -->
+
+
+    </div>
+
+
+  </main>
+  <!-- /.main-content -->
+
+
+  <!-- Scripts -->
+  <script src="./js/plang.js"></script>
+  <script src="register.js"></script>
+  <script src="./assets/js/page.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+  <script>
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>Stusmart — Second step registration</title>
+
+  <!-- Styles -->
+  <link href="./assets/css/page.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+  <link href="./assets/css/mycss.css" rel="stylesheet">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+  <!-- Favicons -->
+  <!--<link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+    <link rel="icon" href="./assets/img/favicon.png">-->
+</head>
+
+<body class="layout-centered bg-img ">
+
+  <script>
+    var baseUrl = 'http://www.thestusmart.com/';
+    var mainUrl = 'http://178.128.53.38:4000';
+    var userid = Cookies.get('id');
+
+    function populateCountry(id) {
+      var app = document.getElementById(id);
+      while (app.firstChild) {
+        app.removeChild(app.firstChild);
+      }
+      var request = new XMLHttpRequest();
+      request.open('GET', mainUrl + '/api/country', true);
+      request.onload = function() {
+        var index = 0;
+        var opt = document.createElement("option");
+        opt.value = 0;
+        opt.innerHTML = '';
+        app.appendChild(opt);
+        var data = JSON.parse(this.response);
+        console.log(data);
+        if (request.status >= 200 && request.status < 400) {
+          data.data.docs.forEach(Country => {
+            var opt = document.createElement("option");
+            opt.value = Country._id;
+            opt.innerHTML = Country.name;
+            app.appendChild(opt);
+            index++;
+          });
+        } else {
+          const errorMessage = document.createElement('marquee');
+          errorMessage.textContent = `Gah, it's not working!`;
+          app.appendChild(errorMessage);
+        }
+      }
+      request.send();
+    }
+
+    function populateState(id, countryid) {
+      var app = document.getElementById(id);
+      while (app.firstChild) {
+        app.removeChild(app.firstChild);
+      }
+      var request = new XMLHttpRequest();
+      request.open('GET', mainUrl + '/api/statebycountry/' + countryid, true);
+      request.onload = function() {
+        var index = 0;
+        var opt = document.createElement("option");
+        opt.value = 0;
+        opt.innerHTML = '';
+        app.appendChild(opt);
+        var data = JSON.parse(this.response);
+        console.log(data);
+        if (request.status >= 200 && request.status < 400) {
+          data.data.docs.forEach(University => {
+            var opt = document.createElement("option");
+            opt.value = University._id;
+            opt.innerHTML = University.name;
+            app.appendChild(opt);
+            index++;
+          });
+        } else {
+          const errorMessage = document.createElement('marquee');
+          errorMessage.textContent = `Gah, it's not working!`;
+          app.appendChild(errorMessage);
+        }
+      }
+      request.send();
+    }
+
+    function populateUniversity(id, stateid) {
+      var app = document.getElementById(id);
+      while (app.firstChild) {
+        app.removeChild(app.firstChild);
+      }
+      var request = new XMLHttpRequest();
+      request.open('GET', mainUrl + '/api/universitybystate/' + stateid, true);
+      request.onload = function() {
+        var index = 0;
+        var opt = document.createElement("option");
+        opt.value = 0;
+        opt.innerHTML = '';
+        app.appendChild(opt);
+        var data = JSON.parse(this.response);
+        console.log(data);
+        if (request.status >= 200 && request.status < 400) {
+          data.data.docs.forEach(University => {
+            var opt = document.createElement("option");
+            opt.value = University._id;
+            opt.innerHTML = University.name;
+            app.appendChild(opt);
+            index++;
+          });
+        } else {
+          const errorMessage = document.createElement('marquee');
+          errorMessage.textContent = `Gah, it's not working!`;
+          app.appendChild(errorMessage);
+        }
+      }
+      request.send();
+    }
+
+    function populateFaculty(id, unvid) {
+      var app = document.getElementById(id);
+      while (app.firstChild) {
+        app.removeChild(app.firstChild);
+      }
+      var request = new XMLHttpRequest();
+      request.open('GET', mainUrl + '/api/facultybyuniversity/' + unvid, true);
+      request.onload = function() {
+        var index = 0;
+
+        var opt = document.createElement("option");
+        opt.value = 0;
+        opt.innerHTML = '';
+        app.appendChild(opt);
+        var data = JSON.parse(this.response);
+        console.log(data);
+        if (request.status >= 200 && request.status < 400) {
+          data.data.docs.forEach(University => {
+            var opt = document.createElement("option");
+            opt.value = University._id;
+            opt.innerHTML = University.name;
+            app.appendChild(opt);
+            index++;
+          });
+        } else {
+          const errorMessage = document.createElement('marquee');
+          errorMessage.textContent = `Gah, it's not working!`;
+          app.appendChild(errorMessage);
+        }
+      }
+      request.send();
+    }
+
+    function populateCourse(id, courseid) {
+      var app = document.getElementById(id);
+      while (app.firstChild) {
+        app.removeChild(app.firstChild);
+      }
+      var request = new XMLHttpRequest();
+      request.open('GET', mainUrl + '/api/coursebyfaculty/' + courseid, true);
+      request.onload = function() {
+        var index = 0;
+        var opt = document.createElement("option");
+        opt.value = 0;
+        opt.innerHTML = '';
+        app.appendChild(opt);
+        var data = JSON.parse(this.response);
+        console.log(data);
+        if (request.status >= 200 && request.status < 400) {
+          data.data.docs.forEach(University => {
+            var opt = document.createElement("option");
+            opt.value = University._id;
+            opt.innerHTML = University.name;
+            app.appendChild(opt);
+            index++;
+          });
+        } else {
+          const errorMessage = document.createElement('marquee');
+          errorMessage.textContent = `Gah, it's not working!`;
+          app.appendChild(errorMessage);
+        }
+      }
+      request.send();
+    }
+
+    function populateUser(id) {
+      var app = document.getElementById(id);
+      var request = new XMLHttpRequest();
+      request.open('GET', mainUrl + '/api/users/' + userid, true);
+      request.onload = function() {
+        var data = JSON.parse(this.response);
+        console.log(data);
+        app.innerHTML = "Welcome " + data.message.firstname + " " + data.message.lastname + "!<br>Please finish your registration"
+      }
+      request.send();
+    }
+
+    function populateSubject(id, subjectid) {
+      var app = document.getElementById(id);
+      while (app.firstChild) {
+        app.removeChild(app.firstChild);
+      }
+      var request = new XMLHttpRequest();
+      request.open('GET', mainUrl + '/api/subjectbycourse/' + subjectid, true);
+      request.onload = function() {
+        var index = 0;
+        var opt = document.createElement("option");
+        opt.value = 0;
+        opt.innerHTML = '';
+        app.appendChild(opt);
+        var data = JSON.parse(this.response);
+        console.log(data);
+        if (request.status >= 200 && request.status < 400) {
+          data.data.docs.forEach(University => {
+            var opt = document.createElement("option");
+            opt.value = University._id;
+            opt.innerHTML = University.name;
+            app.appendChild(opt);
+            index++;
+          });
+        } else {
+          const errorMessage = document.createElement('marquee');
+          errorMessage.textContent = `Gah, it's not working!`;
+          app.appendChild(errorMessage);
+        }
+      }
+      request.send();
+    }
+
+    function updateProfile(form) {
+      var courseValue = document.getElementById('courseDropdown').options[document.getElementById('courseDropdown').selectedIndex].value
+      if (courseValue == 0) {
+        toastr.error("Please select your course");
+        return;
+      }
+      var params = JSON.stringify({
+        isComplete: true,
+        courseid: courseValue
+      })
+      var request = new XMLHttpRequest();
+      request.open('PUT', mainUrl + '/api/users/' + userid, true);
+      request.setRequestHeader("Content-Type", "application/json");
+      request.onload = function() {
+        var data = JSON.parse(this.response);
+        console.log(data);
+        if (data.success) {
+          window.location.href = 'dashboard_student.html'
+        } else {
+          toastr.error(data.message);
+        }
+      }
+      request.send(params);
+    }
+  </script>
+
+  <main class="main-content">
+    <div class="bg-white rounded shadow-7 w-400 mw-100 p-6">
+      <h5 class="mb-7" id="welcomeTxt">
+        <script>
+        populateUser('welcomeTxt');
+        </script>
+      </h5>
+      <form id="ghg" action="javascript:updateProfile(this);" method="get"><br>
+		<small>Can't you find your info ?...then <a href="become_uploader.html">become an uploader</a></small><br><br>
+        <b>Choose Country<b>
+		<div class="form-group" id="University_Upload">
+		<select class="form-control" name="country" id="countryDropdown"  onchange="populateState('stateDropDown', document.getElementById('countryDropdown').options[document.getElementById('countryDropdown').selectedIndex].value)" required >
+
+      <script>
+        populateCountry('countryDropdown');
+      </script>
+			</select>
+
+		</div>
+
+
+    <b>Choose State <b>
+    <div class="form-group">
+      <select class="form-control" name="state" id="stateDropDown"  onchange="populateUniversity('unvDropdown', document.getElementById('stateDropDown').options[document.getElementById('stateDropDown').selectedIndex].value)" required>
+      </select>
+    </div>
+
+		<b>Choose University <b>
+		<div class="form-group">
+			<select class="form-control" name="university" id="unvDropdown" onchange="populateFaculty('facultyDropdown', document.getElementById('unvDropdown').options[document.getElementById('unvDropdown').selectedIndex].value)" required>
+			</select>
+		</div>
+
+		<b>Choose Faculty <b>
+		<div class="form-group">
+			<select class="form-control" name="faculty" id="facultyDropdown" onchange="populateCourse('courseDropdown', document.getElementById('facultyDropdown').options[document.getElementById('facultyDropdown').selectedIndex].value)" required>
+			</select>
+		</div>
+
+
+		<b>Choose Course <b>
+          <div class="form-group">
+			<select class="form-control" name="course" id="courseDropdown" required>
+			</select>
+		  </div>
+
+
+
+
+          <div class="form-group">
+			<button class="btn btn-block btn-primary" type="submit">Submit</button>
+          </div>
+        </form>
+
+        <hr class="w-30">
+
+      </div>
+
+    </main><!-- /.main-content -->
+
+
+    <!-- Scripts -->
+    <script src="./assets/js/page.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+<script>
+
+
+</script>
+
+  </body>
+</html>

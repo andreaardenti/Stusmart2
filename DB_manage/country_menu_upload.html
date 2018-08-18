@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>Stusmart — Country Upload</title>
+
+    <!-- Styles -->
+    <link href="../../assets/css/page.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+	<link href="../../assets/css/mycss.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <!--<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+    <link rel="icon" href="../assets/img/favicon.png">-->
+  </head>
+	<script>
+		function populateCountry(id) {
+				var app = document.getElementById(id);
+				var request = new XMLHttpRequest();
+				request.open('GET', 'http://178.128.53.38:4000/api/country', true);
+				request.onload = function () {
+				  var index=0;
+				  var opt = document.createElement("option");
+					   opt.value= 0;
+					   opt.innerHTML = ""; // whatever property it has
+
+					   // then append it to the select element
+					   app.appendChild(opt);
+				  var data = JSON.parse(this.response);
+				  console.log(data);
+				  if (request.status >= 200 && request.status < 400) {
+					data.data.docs.forEach(Country => {
+					   var opt = document.createElement("option");
+					   opt.value= Country._id;
+					   opt.innerHTML = Country.name; // whatever property it has
+
+					   // then append it to the select element
+					   app.appendChild(opt);
+					   index++;
+					});
+				  } else {
+					const errorMessage = document.createElement('marquee');
+					errorMessage.textContent = `Gah, it's not working!`;
+					app.appendChild(errorMessage);
+				  }
+				}
+
+				request.send();
+				}
+			</script>
+  <body class="layout-centered bg-img" ">
+  
+  <div class="tab">
+	<button class="tablinks" onclick="openMethod(event, 'upload')" id="defaultOpen">Upload</button>
+	<button class="tablinks" onclick="openMethod(event, 'modify')">Modify</button>
+	<button class="tablinks" onclick="openMethod(event, 'delete')">Delete</button>
+  </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+	<div class="bg-white rounded shadow-7 w-400 mw-100 p-6" > 
+	<div id="upload" class="tabcontent" >
+			<h5 class="mb-7">Upload Country</h5>
+
+			<form id="form_registration"action="http://localhost/stusmart_local/mp/DB_manage/upload_country.php" method="post">
+
+			  <div class="form-group">
+				<input type="name" class="form-control" name="name" placeholder="Name" required>
+			  </div>
+
+			  <div class="form-group">
+				<button class="btn btn-block btn-primary" type="submit">Add Country</button>
+			  </div>
+			</form>
+			
+			<hr class="w-30">
+		   </div>
+	  
+<!------------------------------------------------ DELETE COUNTRY ------------------------------------------------------------>
+
+	    <div id="delete" class="tabcontent" >
+			<h5 class="mb-7">Delete country</h5>
+			<form id="form_registration"action="http://localhost/stusmart_local/mp/DB_manage/delete_country.php" method="post">
+
+			<select class="form-control" name="country" id="country" required >
+				<script>
+					populateCountry('country');
+				</script>
+			</select>
+
+			  <div class="form-group2">
+				<button class="btn btn-block btn-primary" type="submit">Cancel Country</button>
+			  </div>
+			</form>
+			</div>
+	<!------------------------------------------------ MODIFY COUNTRY ------------------------------------------------------------>		
+		 
+		 <div id="modify" class="tabcontent" >
+			<h5 class="mb-7">Modify country</h5>
+			<form id="form_registration"action="http://localhost/stusmart_local/mp/DB_manage/modify_country.php" method="post">
+
+			<select class="form-control" name="country_modify" id="country_modify" required >
+				<script>
+					populateCountry('country_modify');
+				</script>
+			</select>
+			
+			  <div class="form-group">
+				<input type="name" class="form-control" name="name" placeholder="Name" required>
+			  </div>
+			  
+			  <div class="form-group2">
+				<button class="btn btn-block btn-primary" type="submit">Modify Country</button>
+			  </div>
+			</form>
+		</div>
+		    <hr class="w-30">
+			<a href="upload_menu.html">Back to menu</a>
+		</div>
+
+
+      
+
+    </main><!-- /.main-content -->
+
+
+    <!-- Scripts -->
+    <script src="../assets/js/page.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+	<script>
+	  function openMethod(evt, Method) {
+		// Declare all variables
+		var i, tabcontent, tablinks;
+
+		// Get all elements with class="tabcontent" and hide them
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+
+		// Get all elements with class="tablinks" and remove the class "active"
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+
+		// Show the current tab, and add an "active" class to the button that opened the tab
+		document.getElementById(Method).style.display = "block";
+		evt.currentTarget.className += " active";
+	  }
+	  
+	  
+
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+	</script>
+
+
+  </body>
+</html>
