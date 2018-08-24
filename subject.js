@@ -59,6 +59,42 @@ function getStudentInfo() {
 }
 
 
+function remove1() {
+  var regattr = getElementsByAttribute("id", "'div1'");
+  $(regattr).remove();
+}
+
+function remove2() {
+  var regattr = getElementsByAttribute("id", "'div2'");
+  $(regattr).remove();
+}
+
+function remove3() {
+  var regattr = getElementsByAttribute("id", "'div3'");
+  $(regattr).remove();
+}
+
+
+function getElementsByAttribute(attr, value) {
+  if ('querySelectorAll' in document) {
+    return document.querySelectorAll("[" + attr + "=" + value + "]")
+  } else {
+    var els = document.getElementsByTagName("*"),
+      result = []
+
+    for (var i = 0, _len = els.length; i < _len; i++) {
+      var el = els[i]
+
+      if (el.hasAttribute(attr)) {
+        if (el.getAttribute(attr) === value) result.push(el)
+      }
+    }
+
+    return result
+  }
+}
+
+
 function getSubjectInfo() {
   var request = new XMLHttpRequest();
   request.open('GET', mainUrl + '/api/subject/' + subjectid, true);
@@ -82,11 +118,14 @@ function getEbooks1() {
   request.open('GET', mainUrl + '/api/ebook/?subjectid=' + subjectid + '&fileType=Chapter%20Note&sortBy=date', true);
   request.onload = function() {
     var data = JSON.parse(this.response);
-    console.log(data);
     NProgress.done();
     if (request.status >= 200 && request.status < 400) {
       index = 1;
       var arrayDocs = data.data.docs;
+      if (arrayDocs.length == 0) {
+        remove1();
+        return;
+      }
       arrayDocs.forEach(Ebook => {
         addElement('chapterNoteList', Ebook, index);
         index++;
@@ -105,11 +144,14 @@ function getEbooks2() {
   request.open('GET', mainUrl + '/api/ebook/?subjectid=' + subjectid + '&fileType=Whole%20Course&sortBy=date', true);
   request.onload = function() {
     var data = JSON.parse(this.response);
-    console.log(data);
     NProgress.done();
     if (request.status >= 200 && request.status < 400) {
       index = 1;
       var arrayDocs = data.data.docs;
+      if (arrayDocs.length == 0) {
+        remove2();
+        return;
+      }
       arrayDocs.forEach(Ebook => {
         addElement('wholeCourseList', Ebook, index);
         index++;
@@ -128,17 +170,14 @@ function getEbooks3() {
   request.open('GET', mainUrl + '/api/ebook/?subjectid=' + subjectid + '&fileType=Daily%20Note&sortBy=date', true);
   request.onload = function() {
     var data = JSON.parse(this.response);
-    console.log(data);
     NProgress.done();
     if (request.status >= 200 && request.status < 400) {
       index = 1;
       var arrayDocs = data.data.docs;
-      /*
-      if(arrayDocs.length==0){
-        document.getElementById('div3').style.visibility='hidden';
-        document.getElementById('dailyNoteList').style.visibility='hidden';
+      if (arrayDocs.length == 0) {
+        remove3();
+        return;
       }
-      */
       arrayDocs.forEach(Ebook => {
         addElement('dailyNoteList', Ebook, index);
         index++;
