@@ -176,13 +176,14 @@ function getNoteInfo() {
     console.log(data);
     console.log(parseInt(data.avgrating));
     var link = 'http://178.128.53.38:4000/media/' + data.note.filelink;
-    if (isPremium) {
+    //if (isPremium) {
       PDFObject.embed(link, "#example1");
       $("#pdf-main-container").hide();
-    } else {
+    /*} else {
       showPDF(link);
       $("#example1").hide();
     }
+    */
     console.log(link);
   }
   request.send();
