@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://thestusmart.com/</loc>
+  <lastmod>2018-09-15T06:08:35+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://thestusmart.com/index.html</loc>
+  <lastmod>2018-09-15T06:08:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thestusmart.com/register.html</loc>
+  <lastmod>2018-09-15T06:08:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thestusmart.com/dashboard_student.html</loc>
+  <lastmod>2018-09-15T06:08:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thestusmart.com/login_student.html</loc>
+  <lastmod>2018-09-15T06:21:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thestusmart.com/become_uploader.html</loc>
+  <lastmod>2018-09-15T06:08:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thestusmart.com/contact.html</loc>
+  <lastmod>2018-09-15T06:08:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thestusmart.com/faq.html</loc>
+  <lastmod>2018-09-15T06:08:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thestusmart.com/privacy_policy.html</loc>
+  <lastmod>2018-09-15T06:08:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thestusmart.com/terms_of_use_stusmart.html</loc>
+  <lastmod>2018-09-15T06:08:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://thestusmart.com/dashboard_student_content.html</loc>
+  <lastmod>2018-09-15T06:08:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
