@@ -19,7 +19,7 @@ $token="JWT ".$_POST["token"];
 		)
 	));
 
-$response = file_get_contents('http://178.128.53.38:4000/api/professors/'.$_POST["user_id"], FALSE, $context);
+$response = file_get_contents('https://thestusmart.com/developer/api/professors/'.$_POST["user_id"], FALSE, $context);
 
 echo $response;
 	// Check for errors
@@ -53,7 +53,7 @@ function checksubjects(){
 		)
 	));
 
-	$response = file_get_contents('http://178.128.53.38:4000/api/professors/'.$_POST["user_id"], FALSE, $context);
+	$response = file_get_contents('https://thestusmart.com/developer/api/professors/'.$_POST["user_id"], FALSE, $context);
 
   	echo $response;
 

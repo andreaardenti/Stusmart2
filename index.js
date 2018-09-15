@@ -1,4 +1,4 @@
-var mainUrl = 'http://178.128.53.38:4000';
+var mainUrl = 'https://thestusmart.com/developer';
 
 function changeIta() {
   Cookies.set('lang', 'ita', {

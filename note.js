@@ -2,7 +2,7 @@ var studentid = Cookies.get('id');
 var token = Cookies.get('token');
 var noteid = Cookies.get('noteid');
 var baseUrl = 'http://www.thestusmart.com/';
-var mainUrl = 'http://178.128.53.38:4000';
+var mainUrl = 'https://thestusmart.com/developer';
 
 var isPremium = false;
 var page_limit = 4;
@@ -175,7 +175,7 @@ function getNoteInfo() {
     var data = JSON.parse(this.response);
     console.log(data);
     console.log(parseInt(data.avgrating));
-    var link = 'http://178.128.53.38:4000/media/' + data.note.filelink;
+    var link = 'https://thestusmart.com/developer/media/' + data.note.filelink;
     //if (isPremium) {
       PDFObject.embed(link, "#example1");
       $("#pdf-main-container").hide();

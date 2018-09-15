@@ -1,5 +1,5 @@
 var baseUrl = 'http://www.thestusmart.com/';
-var mainUrl = 'http://178.128.53.38:4000';
+var mainUrl = 'https://thestusmart.com/developer';
 var studentid = Cookies.get('id');
 
 
@@ -22,7 +22,7 @@ getStudentInfo();
 
 function getStudentInfo() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://178.128.53.38:4000/api/users/' + studentid, true);
+  request.open('GET', 'https://thestusmart.com/developer/api/users/' + studentid, true);
   request.onload = function() {
 
     NProgress.done();

@@ -39,7 +39,7 @@
 			function populateCountry(id) {
 					var app = document.getElementById(id);
 					var request = new XMLHttpRequest();
-					request.open('GET', 'http://178.128.53.38:4000/api/country', true);
+					request.open('GET', 'https://thestusmart.com/developer/api/country', true);
 					request.onload = function () {
 					  var index=0;
 					  var opt = document.createElement("option");
@@ -257,7 +257,7 @@
 					app.options[i]=null;
 				}
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/statebycountry/'+countryid, true);
+				request.open('GET', 'https://thestusmart.com/developer/api/statebycountry/'+countryid, true);
 				request.onload = function () {
 				  var index=0;
 				  var opt = document.createElement("option");
@@ -303,7 +303,7 @@
 					app.options[i]=null;
 				}
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/universitybystate/'+stateid, true);
+				request.open('GET', 'https://thestusmart.com/developer/api/universitybystate/'+stateid, true);
 				request.onload = function () {
 				  var index=0;
 				  var opt = document.createElement("option");
@@ -346,7 +346,7 @@
 					app.options[i]=null;
 				}
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/facultybyuniversity/'+universityid, true);
+				request.open('GET', 'https://thestusmart.com/developer/api/facultybyuniversity/'+universityid, true);
 				request.onload = function () {
 				  var index=0;
 				  var opt = document.createElement("option");
@@ -392,7 +392,7 @@
 					app.options[i]=null;
 				}
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/coursebyfaculty/'+facultyid, true);
+				request.open('GET', 'https://thestusmart.com/developer/api/coursebyfaculty/'+facultyid, true);
 				request.onload = function () {
 				  var index=0;
 				  var opt = document.createElement("option");
@@ -438,7 +438,7 @@
 					app.options[i]=null;
 				}
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/subjectbycourse/'+courseid, true);
+				request.open('GET', 'https://thestusmart.com/developer/api/subjectbycourse/'+courseid, true);
 				request.onload = function () {
 				  var index=0;
 				  var opt = document.createElement("option");

@@ -1,5 +1,5 @@
 init();
-var mainUrl = 'http://178.128.53.38:4000';
+var mainUrl = 'https://thestusmart.com/developer';
 var baseUrl = 'http://www.thestusmart.com/';
 
 function init() {

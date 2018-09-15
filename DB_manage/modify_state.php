@@ -15,7 +15,7 @@ $context = stream_context_create(array(
 ));
 
 // Send the request
-$response = file_get_contents('http://178.128.53.38:4000/api/state/'.$_POST["state_modify"], FALSE, $context);
+$response = file_get_contents('https://thestusmart.com/developer/api/state/'.$_POST["state_modify"], FALSE, $context);
 
 // Check for errors
 if($response === FALSE){

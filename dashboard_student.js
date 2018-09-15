@@ -20,7 +20,7 @@ getStudentInfo();
 
 function getStudentInfo() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://178.128.53.38:4000/api/users/' + studentid, true);
+  request.open('GET', 'https://thestusmart.com/developer/api/users/' + studentid, true);
   request.onload = function() {
     console.log(data);
     var data = JSON.parse(this.response);
@@ -55,7 +55,7 @@ function getStudentInfo() {
 
 function getUniversityData(courseid) {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://178.128.53.38:4000/api/universitybycourse/' + courseid, true);
+  request.open('GET', 'https://thestusmart.com/developer/api/universitybycourse/' + courseid, true);
   request.onload = function() {
     var data = JSON.parse(this.response);
     console.log(data);
@@ -73,7 +73,7 @@ function getUniversityData(courseid) {
 function getCourseName(courseid, unvName) {
   console.log(courseid);
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://178.128.53.38:4000/api/course/' + courseid, true);
+  request.open('GET', 'https://thestusmart.com/developer/api/course/' + courseid, true);
   request.onload = function() {
     var data = JSON.parse(this.response);
     console.log(data);
@@ -88,7 +88,7 @@ function getCourseName(courseid, unvName) {
 function getCourse(courseid) {
   console.log(courseid);
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://178.128.53.38:4000/api/course/' + courseid, true);
+  request.open('GET', 'https://thestusmart.com/developer/api/course/' + courseid, true);
   request.onload = function() {
     var data = JSON.parse(this.response);
     console.log(data);
@@ -150,7 +150,7 @@ function shuffle(a) {
 
 function getAllsubjects(courseid) {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://178.128.53.38:4000/api/subjectbycourse/' + courseid, true);
+  request.open('GET', 'https://thestusmart.com/developer/api/subjectbycourse/' + courseid, true);
   request.onload = function() {
     var index = 0;
     var data = JSON.parse(this.response);

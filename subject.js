@@ -2,7 +2,7 @@ var studentid = Cookies.get('id');
 var token = Cookies.get('token');
 var subjectid = Cookies.get('subjectid');
 var baseUrl = 'http://www.thestusmart.com/';
-var mainUrl = 'http://178.128.53.38:4000';
+var mainUrl = 'https://thestusmart.com/developer';
 console.log(subjectid);
 
 if (!studentid) {
@@ -194,7 +194,7 @@ function getEbooks3() {
 
 
 function addElement(parentId, Ebook, index) {
-  var link = 'http://178.128.53.38:4000/media/' + Ebook.filelink;
+  var link = 'https://thestusmart.com/developer/media/' + Ebook.filelink;
   var p = document.getElementById(parentId);
   var outerCard = document.createElement('div');
   outerCard.className = "card";

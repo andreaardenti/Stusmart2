@@ -69,7 +69,7 @@
 			<script>
 				var app = document.getElementById('country');
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/country', true);
+				request.open('GET', 'https://thestusmart.com/developer/api/country', true);
 				request.onload = function () {
 				  var index=0;
 				  				  var opt = document.createElement("option");
@@ -202,7 +202,7 @@ $(".abc").each(function()
 					app.options[i]=null;
 				}
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/universitybycountry/'+countryid, true);
+				request.open('GET', 'https://thestusmart.com/developer/api/universitybycountry/'+countryid, true);
 				request.onload = function () {
 				  var index=0;
 				  				  var opt = document.createElement("option");
@@ -246,7 +246,7 @@ $(".abc").each(function()
 					app.options[i]=null;
 				}
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/facultybyunv/'+universityid, true);
+				request.open('GET', 'https://thestusmart.com/developer/api/facultybyunv/'+universityid, true);
 				request.onload = function () {
 				  var index=0;
 				  				  var opt = document.createElement("option");
@@ -289,7 +289,7 @@ $(".abc").each(function()
 					app.options[i]=null;
 				}
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/coursebyfaculty/'+facultyid, true);
+				request.open('GET', 'https://thestusmart.com/developer/api/coursebyfaculty/'+facultyid, true);
 				request.onload = function () {
 				  var index=0;
 				  	   var opt = document.createElement("option");

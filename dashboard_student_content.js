@@ -1,5 +1,5 @@
 var baseUrl = 'http://www.thestusmart.com/';
-var mainUrl = 'http://178.128.53.38:4000';
+var mainUrl = 'https://thestusmart.com/developer';
 var studentid = Cookies.get('id');
 
 
@@ -18,7 +18,7 @@ getStudentInfo();
 
 function getStudentInfo() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://178.128.53.38:4000/api/users/' + studentid, true);
+  request.open('GET', 'https://thestusmart.com/developer/api/users/' + studentid, true);
   request.onload = function() {
 
     NProgress.done();
@@ -285,7 +285,7 @@ function populateEbookData() {
       console.log(now - date);
       var compareDatesBoolean = (now - date) < oneDay;
       tr8.innerHTML = '<a  href=javascript:showDeleteDialog("' + Ebook._id + '")><div style="height:100%;width:100%">Delete</div></a>'
-      var link = 'http://178.128.53.38:4000/media/' + Ebook.filelink;
+      var link = 'https://thestusmart.com/developer/media/' + Ebook.filelink;
       tr7.innerHTML = '<a href=' + link + '><div style="height:100%;width:100%">View</div></a> ';
       tr3.innerHTML = (add3Dots(Ebook.desc));
       tr4.innerHTML = (Ebook.fileType);

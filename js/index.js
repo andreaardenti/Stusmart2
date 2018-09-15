@@ -154,7 +154,7 @@ function registerElements(elements, exampleName) {
 function makePremium() {
 
   var baseUrl = 'http://www.thestusmart.com/';
-  var mainUrl = 'http://178.128.53.38:4000';
+  var mainUrl = 'https://thestusmart.com/developer';
   var userid = Cookies.get('id');
   var params = JSON.stringify({
     isPremium: true

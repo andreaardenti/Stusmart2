@@ -1,5 +1,5 @@
 var baseUrl = 'http://www.thestusmart.com/';
-var mainUrl = 'http://178.128.53.38:4000';
+var mainUrl = 'https://thestusmart.com/developer';
 var professorid = Cookies.get('id');
 console.log(professorid);
 if (!Cookies.get('id')) {

@@ -16,7 +16,7 @@ $token="JWT ".$_POST["token"];
 		)
 	));
 
-$response = file_get_contents('http://178.128.53.38:4000/api/users/'.$_POST["user_id"], FALSE, $context);
+$response = file_get_contents('https://thestusmart.com/developer/api/users/'.$_POST["user_id"], FALSE, $context);
 
 	// Check for errors
 	if($response === FALSE){

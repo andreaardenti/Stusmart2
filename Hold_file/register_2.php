@@ -36,7 +36,7 @@
 			<script>
 				var app = document.getElementById('university');
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/university', true);
+				request.open('GET', 'https://thestusmart.com/developer/api/university', true);
 				request.onload = function () {
 				  var index=0;
 				  var data = JSON.parse(this.response);
@@ -103,7 +103,7 @@
 					app.options[i]=null;
 				}
 				var request = new XMLHttpRequest();
-				request.open('GET', 'http://178.128.53.38:4000/api/coursebyunv/'+universityid, true);
+				request.open('GET', 'https://thestusmart.com/developer/api/coursebyunv/'+universityid, true);
 				request.onload = function () {
 				  var index=0;
 				  var data = JSON.parse(this.response);
