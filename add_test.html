@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <title>Smart PG - Results Portal</title>
+
+  <!-- Styles -->
+  <link href="../assets/css/page.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+
+  <!-- Favicons -->
+
+  <script src='nprogress.js'></script>
+  <link rel='stylesheet' href='nprogress.css' />
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="icon" href="../assets/img/favicon.png">
+</head>
+
+
+
+<style>
+  .option {
+      border: 1px solid #efefef;
+      border-radius: 2px;
+      background: #ffffff;
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  </style>
+
+<body>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+
+
+    <section class="section bg-gray">
+      <div class="container">
+        <header class="section-header">
+          <h2>Add New Assignment</h2>
+        </header>
+
+
+        <div class="row">
+          <div class="col-md-4 mx-auto">
+
+            <form class="input-border">
+
+
+              <b>Choose Subject </b>
+              <div class="form-group">
+                <select class="form-control" name="course" id="subjectDropdown" required>
+              			</select>
+              </div>
+
+              <div class="form-group">
+                <input id="assignmentName" class="form-control" type="text" placeholder="Assignment Name">
+              </div>
+
+
+                <div class="form-group">
+                  <textarea id="assignmentDesc" class="form-control" rows="4" placeholder="Assignment Description"></textarea>
+                </div>
+
+
+
+                <div id="questions">
+                </div>
+                <button onclick="addTask()" type="button" class="btn btn-success">Add New Task</button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button onclick="publishAssignment()" type="button" class="btn btn-primary">Publish</button>
+            </form>
+
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
+  </main>
+  <!-- /.main-content -->
+
+  <!-- Scripts -->
+  <script src="add_test.js"></script>
+  <script src="../assets/js/page.min.js"></script>
+  <script src="../assets/js/script.js"></script>
+
+</body>
+
+</html>
