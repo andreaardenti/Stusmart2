@@ -7,6 +7,8 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
+  <meta name="google-signin-client_id" content="985517553754-epmhsiuhildnf30krrdtfojapboan058.apps.googleusercontent.com">
+
   <title>Stusmart — Login</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -14,6 +16,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <!-- Styles -->
   <link href="./assets/css/page.min.css" rel="stylesheet">
   <link href="./assets/css/style.css" rel="stylesheet">
@@ -77,6 +80,8 @@
       <div class="text-center">
 
         <a class="btn btn-circle btn-sm btn-facebook mr-2" href="javascript:void(0);" onclick="fbLogin()" id="fbLink"><i class="fa fa-facebook" ></i></a>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
         <a class="btn btn-circle btn-sm btn-google mr-2" href="#"><i class="fa fa-google"></i></a>
       </div>
 
@@ -207,6 +212,15 @@
         }
       }
       request.send();
+    }
+
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      var password = profile.getId();
+      var firstName = profile.getName().split(' ')[0];
+      var lastName = profile.getName().split(' ')[1];
+      var email = profile.getEmail();
+      signup(firstName, lastName, email, password);
     }
 
 
