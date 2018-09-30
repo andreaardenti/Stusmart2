@@ -166,10 +166,11 @@
         console.log(data);
         if (data.success) {
           toastr.success("Welcome!");
+          fbLogout();
           getUserInfo(data.id, data.token);
         } else {
           if (data.message = "Incorrect Password.") {
-              toastr.error("This email not signed up with facebook. Please login with your email and password");
+            toastr.error("This email was not signed up with facebook. Please login with your email and password");
           } else {
             toastr.error(data.message);
           }
@@ -319,12 +320,7 @@
 
     // Logout from facebook
     function fbLogout() {
-      FB.logout(function() {
-        document.getElementById('fbLink').setAttribute("onclick", "fbLogin()");
-        document.getElementById('fbLink').innerHTML = '<img src="fblogin.png"/>';
-        document.getElementById('userData').innerHTML = '';
-        document.getElementById('status').innerHTML = 'You have successfully logout from Facebook.';
-      });
+      FB.logout(function() {});
     }
   </script>
 
