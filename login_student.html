@@ -168,7 +168,11 @@
           toastr.success("Welcome!");
           getUserInfo(data.id, data.token);
         } else {
-          toastr.error(data.message);
+          if (data.message = "Incorrect Password.") {
+              toastr.error("This email not signed up with facebook. Please login with your email and password");
+          } else {
+            toastr.error(data.message);
+          }
         }
       }
       request.send(params);
