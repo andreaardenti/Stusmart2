@@ -158,13 +158,13 @@
     }
 
 
-    function loginFB(myemail, mypassword) {
+    function loginSocial(myemail, mypassword) {
       var params = JSON.stringify({
         email: myemail,
         password: mypassword
       })
       var request = new XMLHttpRequest();
-      request.open('POST', mainUrl + '/api/authenticate', true);
+      request.open('POST', mainUrl + '/api/authenticatesocial', true);
       request.setRequestHeader("Content-Type", "application/json");
       request.onload = function() {
         var data = JSON.parse(this.response);
@@ -173,15 +173,12 @@
           toastr.success("Welcome!");
           getUserInfo(data.id, data.token);
         } else {
-          if (data.message = "Incorrect Password.") {
-            toastr.error("This email was not signed up with facebook. Please login with your email and password");
-          } else {
             toastr.error(data.message);
-          }
         }
       }
       request.send(params);
     }
+
 
     function getUserInfo(myId, myToken) {
       var request = new XMLHttpRequest();
@@ -258,10 +255,10 @@
         var data = JSON.parse(this.response);
         console.log(data);
         if (data.success) {
-          loginFB(myemail, mypassword);
+          loginSocial(myemail, mypassword);
         } else {
           if (data.message == "User with this email already exist.") {
-            loginFB(myemail, mypassword);
+            loginSocial(myemail, mypassword);
           } else {
             toastr.error(data.message);
           }
