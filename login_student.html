@@ -76,9 +76,6 @@
       <div class="divider">Or Login With</div>
       <div class="text-center">
 
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-        </fb:login-button>
-
         <a class="btn btn-circle btn-sm btn-facebook mr-2" href="javascript:void(0);" onclick="fbLogin()" id="fbLink"><i class="fa fa-facebook" ></i></a>
         <a class="btn btn-circle btn-sm btn-google mr-2" href="#"><i class="fa fa-google"></i></a>
       </div>
@@ -135,6 +132,28 @@
     function login(form) {
       var myemail = form.emailField.value;
       var mypassword = form.passwordField.value;
+      var params = JSON.stringify({
+        email: myemail,
+        password: mypassword
+      })
+      var request = new XMLHttpRequest();
+      request.open('POST', mainUrl + '/api/authenticate', true);
+      request.setRequestHeader("Content-Type", "application/json");
+      request.onload = function() {
+        var data = JSON.parse(this.response);
+        console.log(data);
+        if (data.success) {
+          toastr.success("Welcome!");
+          getUserInfo(data.id, data.token);
+        } else {
+          toastr.error(data.message);
+        }
+      }
+      request.send(params);
+    }
+
+
+    function loginFB(myemail, myemail) {
       var params = JSON.stringify({
         email: myemail,
         password: mypassword
@@ -223,7 +242,11 @@
         if (data.success) {
           window.location.href = 'login_student.html';
         } else {
-          toastr.error(data.message);
+          if (data.message == "User with this email already exist.") {
+            loginFB(myemail, mypassword);
+          } else {
+            toastr.error(data.message);
+          }
         }
       }
       request.send(params);
