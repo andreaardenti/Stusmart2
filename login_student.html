@@ -19,16 +19,16 @@
   <link href="./assets/css/style.css" rel="stylesheet">
   <link href="./assets/css/mycss.css" rel="stylesheet">
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="./assets/img/stusmart_icon_big.png">
-    <link rel="icon" href="./assets/img/stusmart_icon_big.png">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="./assets/img/stusmart_icon_big.png">
+  <link rel="icon" href="./assets/img/stusmart_icon_big.png">
 </head>
 
 <body class="layout-centered bg-img" style="background-image: url(./assets/img/bg/4.jpg);">
 
 
   <!-- Main Content -->
-          <a class="navbar-brand" href="index.html">
+  <a class="navbar-brand" href="index.html">
             <img class="logo-dark" src="./assets/img/stusmart_icon.png" alt="logo">
           </a>
   <main class="main-content">
@@ -44,41 +44,41 @@
           <input type="text" class="form-control" name="email" pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" id="emailField" required>
         </div>
 
-        <div class="form-group">
-          <label><h5>Password</h5></label>
-          <input type="password" class="form-control" name="password" placeholder="Password" required minlength="6" maxlength="12" id="passwordField">
-          <span class="validity"></span>
-          <b size="3" id="langau"> Between 6 and 12.</b>
-          <b size="3" id="langita"> Tra 6 e 12 caratteri</b>
-          <b size="3" id="langcn"> Between 6 and 12.</b>
-        </div>
-
-        <div class="form-group flexbox py-3">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" checked>
-            <label id="langau" class="custom-control-label">Remember me</label>
-            <label id="langita" class="custom-control-label">Ricordati di me</label>
-            <label id="langcn" class="custom-control-label">Remember me</label>
+          <div class="form-group">
+            <label><h5>Password</h5></label>
+            <input type="password" class="form-control" name="password" placeholder="Password" required minlength="6" maxlength="12" id="passwordField">
+            <span class="validity"></span>
+            <b size="3" id="langau"> Between 6 and 12.</b>
+            <b size="3" id="langita"> Tra 6 e 12 caratteri</b>
+            <b size="3" id="langcn"> Between 6 and 12.</b>
           </div>
-          <a id="langau" class="text-muted small-2" href="user-recover.html">Forgot password?</a>
-          <a id="langita" class="text-muted small-2" href="user-recover.html">Hai dimenticato la password?</a>
-          <a id="langcn" class="text-muted small-2" href="user-recover.html">Forgot password?</a>
-        </div>
+
+          <div class="form-group flexbox py-3">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" checked>
+              <label id="langau" class="custom-control-label">Remember me</label>
+              <label id="langita" class="custom-control-label">Ricordati di me</label>
+              <label id="langcn" class="custom-control-label">Remember me</label>
+            </div>
+            <a id="langau" class="text-muted small-2" href="user-recover.html">Forgot password?</a>
+            <a id="langita" class="text-muted small-2" href="user-recover.html">Hai dimenticato la password?</a>
+            <a id="langcn" class="text-muted small-2" href="user-recover.html">Forgot password?</a>
+          </div>
 
 
-        <div class="form-group">
-          <button id="langau" class="btn btn-block btn-primary" type="submit">Login</button>
-          <button id="langita" class="btn btn-block btn-primary" type="submit">Accedi</button>
-          <button id="langcn" class="btn btn-block btn-primary" type="submit">Login</button>
-        </div>
-      </form>
+          <div class="form-group">
+            <button id="langau" class="btn btn-block btn-primary" type="submit">Login</button>
+            <button id="langita" class="btn btn-block btn-primary" type="submit">Accedi</button>
+            <button id="langcn" class="btn btn-block btn-primary" type="submit">Login</button>
+          </div>
+      </form>+
 
-      <!--<div class="divider">Or Login With</div>
-        <div class="text-center">
-          <a class="btn btn-circle btn-sm btn-facebook mr-2" href="#"><i class="fa fa-facebook"></i></a>
-          <a class="btn btn-circle btn-sm btn-google mr-2" href="#"><i class="fa fa-google"></i></a>
-          <a class="btn btn-circle btn-sm btn-twitter" href="#"><i class="fa fa-twitter"></i></a>
-        </div>-->
+      <div class="divider">Or Login With</div>
+      <div class="text-center">
+
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" href="#"></fb:login-button>
+        <a class="btn btn-circle btn-sm btn-google mr-2" href="#"><i class="fa fa-google"></i></a>
+      </div>
 
       <hr class="w-30">
 
@@ -181,6 +181,46 @@
         }
       }
       request.send();
+    }
+  </script>
+
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '175876023302389',
+        cookie: true,
+        xfbml: true,
+        version: 'v3.1'
+      });
+
+      FB.AppEvents.logPageView();
+
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+      console.log(response);
+    });
+
+
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+        console.log(response);
+      });
     }
   </script>
 
