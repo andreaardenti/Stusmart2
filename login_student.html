@@ -153,7 +153,7 @@
     }
 
 
-    function loginFB(myemail, myemail) {
+    function loginFB(myemail, mypassword) {
       var params = JSON.stringify({
         email: myemail,
         password: mypassword
@@ -240,7 +240,7 @@
         var data = JSON.parse(this.response);
         console.log(data);
         if (data.success) {
-          window.location.href = 'login_student.html';
+          loginFB(myemail, mypassword);
         } else {
           if (data.message == "User with this email already exist.") {
             loginFB(myemail, mypassword);
