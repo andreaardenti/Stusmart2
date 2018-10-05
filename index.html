@@ -18,9 +18,13 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="./assets/img/stusmart_icon_big.png">
-    <link rel="icon" href="./assets/img/stusmart_icon_big.png">
+
+
+  <script src='nprogress.js'></script>
+  <link rel='stylesheet' href='nprogress.css' />
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="./assets/img/stusmart_icon_big.png">
+  <link rel="icon" href="./assets/img/stusmart_icon_big.png">
 </head>
 
 <body>
@@ -337,19 +341,19 @@
             <img src="./assets/img/mokeup/mokeup_img.png" alt="..." data-aos="slide-up">
           </div>
 
-          <div class="col-md-6 align-self-center">
-            <h2>Now Available</h2>
-            <p>Download our state of the art mobile app for android.</p>
+            <div class="col-md-6 align-self-center">
+              <h2>Now Available</h2>
+              <p>Download our state of the art mobile app for android.</p>
 
-            <div class="gap-xy-2 my-6">
-              <!--<a><img src="./assets/img/app/badge-apple.png" alt="download on app store"></a>-->
-              <a href="https://play.google.com/store/apps/details?id=com.stusmart"><img src="./assets/img/app/badge-google.png" alt="download on google play"></a>
+              <div class="gap-xy-2 my-6">
+                <!--<a><img src="./assets/img/app/badge-apple.png" alt="download on app store"></a>-->
+                <a href="https://play.google.com/store/apps/details?id=com.stusmart"><img src="./assets/img/app/badge-google.png" alt="download on google play"></a>
+              </div>
+
             </div>
 
           </div>
-
         </div>
-      </div>
     </section>
 
 
@@ -365,19 +369,19 @@
           </div>
 
           <div class="col-md-4 ml-auto">
-            <form class="input-round justify-content-center justify-content-lg-end" action="" method="post" target="_blank">
+            <div class="input-round justify-content-center justify-content-lg-end">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                 </div>
-                <input type="text" name="EMAIL" class="form-control" placeholder="Email Address">
+                <input id="subEmailField" type="text" name="EMAIL" class="form-control" placeholder="Email Address">
                 <span class="input-group-append">
-                    <button id="langau" class="btn btn-info">Subscribe</button>
-          					<button id="langita" class="btn btn-info">Sottoscrivi</button>
-          					<button id="langcn" class="btn btn-info">Subscribe</button>
+                    <button onclick="subscribe()" id="langau" class="btn btn-info">Subscribe</button>
+          					<button onclick="subscribe()" id="langita" class="btn btn-info">Sottoscrivi</button>
+          					<button onclick="subscribe()" id="langcn" class="btn btn-info">Subscribe</button>
                   </span>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -393,7 +397,7 @@
 
         <div class="col-md-6">
           <div class="nav nav-bold nav-uppercase justify-content-center justify-content-md-end">
-		    <a class="nav-link" href="../privacy_policy.html">Privacy Policy</a>
+            <a class="nav-link" href="../privacy_policy.html">Privacy Policy</a>
             <a class="nav-link" href="terms_of_use_stusmart.html">Terms of Use</a>
             <a class="nav-link" href="http://www.theboringsolutions.com"><strong>Company</strong></a>
           </div>

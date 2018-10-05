@@ -79,7 +79,7 @@ function populateEbookData() {
     data.data.docs.forEach(Ebook => {
 
       var date = new Date(Ebook.date)
-      html = '<a class="product-1" href="item.html"><span class="badge badge-pill badge-danger badge-pos-left">New</span><div class="product-detail"><div><h6>'+add3Dots(30, Ebook.name)+'</h6><p>'+add3Dots(120, Ebook.desc)+'</p><p>'+add3Dots(30, date.toString())+'</p></div></div></a>';
+      html = '<a class="product-1" ><span class="badge badge-pill badge-danger badge-pos-left">New</span><div class="product-detail"><div><h6>' + add3Dots(30, Ebook.name) + '</h6><p>' + add3Dots(120, Ebook.desc) + '</p><p>' + add3Dots(30, date.toString()) + '</p></div></div></a>';
       addElement('newSubjectGrid', 'DIV', index, html, "col-md-6 col-xl-4");
       index++;
     });
@@ -87,6 +87,34 @@ function populateEbookData() {
   request.send();
 }
 
+
+function subscribe() {
+
+  var myemail = document.getElementById("subEmailField").value;
+
+  if (!myemail) {
+    toastr.warning("Please enter your email");
+    return;
+  }
+  NProgress.start();
+  var params = JSON.stringify({
+    email: myemail
+  });
+  var request = new XMLHttpRequest();
+  request.open('POST', mainUrl + '/api/subscription', true);
+  request.setRequestHeader("Content-Type", "application/json");
+  request.onload = function() {
+    var data = JSON.parse(this.response);;
+    console.log(data);
+    NProgress.done();
+    if (data.success) {
+      toastr.success(data.message);
+    } else {
+      toastr.error(data.message);
+    }
+  }
+  request.send(params);
+}
 
 function addElement(parentId, elementTag, elementId, html, className) {
   var p = document.getElementById(parentId);
