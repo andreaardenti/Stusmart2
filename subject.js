@@ -10,6 +10,25 @@ if (!studentid) {
 }
 
 
+function toasterOptions() {
+  toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+};
 NProgress.start();
 
 function logOut() {
@@ -244,4 +263,187 @@ function addElement(parentId, Ebook, index) {
   p.appendChild(outerCard);
   p.appendChild(belowdv);
 
+}
+
+function prepareTaskModal() {
+
+}
+
+function createTask(id, taskquestion) {
+
+
+  var outdiv = document.createElement('div');
+  outdiv.className = "form-group";
+
+
+  var label = document.createElement('label');
+  label.className = "col-md-3 control-label";
+  label.innerHTML = taskquestion
+
+  var toolbar = document.createElement('div');
+  toolbar.id = "toolbar" + id;
+  toolbar.innerHTML = "<button class=\"ql-bold\"></button>" +
+    "<button class=\"ql-italic\"></button>" +
+    "<button class=\"ql-underline\"></button>" +
+    "<button class=\"ql-strike\"></button>" +
+    "<button class=\"ql-list\" value=\"ordered\"></button>" +
+    "<button class=\"ql-list\" value=\"bullet\"></button>";
+
+  var input = document.createElement('div');
+  input.id = "answer" + id;
+
+  outdiv.appendChild(label);
+  outdiv.appendChild(toolbar);
+  outdiv.appendChild(input);
+
+  return outdiv;
+
+}
+
+
+
+
+function createAssignment(title, description, id) {
+  var outdiv = document.createElement('div');
+  outdiv.className = "card hover-shadow-7 my-8";
+
+  var rowdiv = document.createElement('div');
+  rowdiv.className = "row";
+
+  var p7div = document.createElement('div');
+  p7div.className = "p-7";
+
+
+  var questionh4 = document.createElement('h4');
+  questionh4.innerHTML = title;
+
+
+  var br = document.createElement('div');
+  var answera = document.createElement('a');
+  answera.innerHTML = description;
+
+
+
+  var btnEdit = document.createElement('button');
+  btnEdit.className = "btn btn-light";
+  btnEdit.innerHTML = "Purchase"
+  btnEdit.setAttribute('type', 'button');
+  btnEdit.onclick = function() {
+    prepareContentModal(id);
+  };
+
+  var btnDelete = document.createElement('button');
+  btnDelete.className = "btn btn-light";
+  btnDelete.innerHTML = "Upload"
+  btnDelete.setAttribute('type', 'button');
+  btnDelete.onclick = function() {
+    loadTasks(id);
+  };
+
+
+  p7div.appendChild(questionh4);
+  p7div.appendChild(answera);
+  p7div.appendChild(br);
+  p7div.appendChild(btnEdit);
+  p7div.appendChild(btnDelete);
+  rowdiv.appendChild(p7div);
+  outdiv.appendChild(rowdiv);
+
+  return outdiv;
+}
+
+addAssesment();
+
+function addAssesment() {
+
+  var assesmentList = document.getElementById("assesment");
+  while (assesmentList.firstChild) {
+    assesmentList.removeChild(assesmentList.firstChild);
+  }
+  var request = new XMLHttpRequest();
+  request.open('GET', mainUrl + '/api/assignment?subjectid=' + subjectid, true);
+  request.onload = function() {
+    NProgress.done();
+    var index = 1;
+    var data = JSON.parse(this.response);
+    console.log(data);
+    if (data.success) {
+      data.data.docs.forEach(Assignment => {
+        assesmentList.appendChild(createAssignment(Assignment.question, Assignment.description, Assignment._id));
+      });
+    } else {
+      toastr.error(data.message);
+    }
+  }
+  request.send();
+}
+
+var answerFieldsArray = new Array();
+
+function uploadAnswers() {
+  answerFieldsArray.forEach(
+    answerField => {
+      tid = answerField.container.id.replace("answer", "");
+      value = answerField.root.innerHTML;
+      console.log(tid);
+      console.log(value);
+      uploadEachAnswer(tid, value);
+    }
+  )
+}
+
+function uploadEachAnswer(mytid, myanswer) {
+  var params = JSON.stringify({
+    answer: myanswer,
+    taskid: mytid,
+    uploaderid: studentid
+  })
+  var request = new XMLHttpRequest();
+  request.open('POST', mainUrl + '/api/answer', true);
+  request.setRequestHeader("Content-Type", "application/json");
+  request.onload = function() {
+    var data = JSON.parse(this.response);
+    console.log(data);
+    if (data.success) {
+      $('#uploadTaskModal').modal('hide');
+      toastr.success(data.message);
+    } else {
+      toastr.error(data.message);
+    }
+  }
+  request.send(params);
+}
+
+
+function loadTasks(id) {
+
+  $('#uploadTaskModal').modal('show');
+  answerFieldsArray = new Array();
+  var taskList = document.getElementById("taskList");
+  while (taskList.firstChild) {
+    taskList.removeChild(taskList.firstChild);
+  }
+  var request = new XMLHttpRequest();
+  request.open('GET', mainUrl + '/api/task?assignmentid=' + id, true);
+  request.onload = function() {
+    NProgress.done();
+    var index = 1;
+    var data = JSON.parse(this.response);
+    console.log(data);
+    if (data.success) {
+      data.data.docs.forEach(Task => {
+        taskList.appendChild(createTask(Task._id, Task.question));
+        var answerEditor = new Quill('#answer' + Task._id, {
+          modules: {
+            toolbar: '#toolbar' + Task._id
+          },
+          theme: 'snow'
+        });
+        answerFieldsArray.push(answerEditor);
+      });
+    } else {
+      toastr.error(data.message);
+    }
+  }
+  request.send();
 }
